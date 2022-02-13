@@ -1,0 +1,10 @@
+.headerContents {
+    display: flex;
+    justify-content: space-between;
+}
+
+.h1 {
+    color: #ea618e;
+    margin: 0;
+    text-align: center;
+}
