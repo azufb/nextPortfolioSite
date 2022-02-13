@@ -1,5 +1,11 @@
 .container {
-  padding: 0 2rem;
+  padding: 2rem;
+  height: 100vh;
+  background-color: #282727;
+}
+
+.container p {
+  color: #ffffff;
 }
 
 .main {
@@ -106,6 +112,12 @@
 .logo {
   height: 1em;
   margin-left: 0.5rem;
+}
+
+.h1 {
+  color: #ffffff;
+  text-decoration: underline #ea618e;
+  margin: 0;
 }
 
 @media (max-width: 600px) {

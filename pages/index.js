@@ -10,9 +10,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1>
-        Azunyanのポートフォリオサイトだよ。
+      <h1 className={styles.h1}>
+        Azu's Portfolio Site!
       </h1>
+
+      <p>Welcome to my site.</p>
     </div>
   )
 }
