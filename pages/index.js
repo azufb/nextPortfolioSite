@@ -1,5 +1,7 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import Top from './Top';
+import Layout from '../components/Layout';
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
@@ -10,9 +12,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1>
-        Azunyanのポートフォリオサイトだよ。
-      </h1>
+      <Layout>
+        <Top />
+      </Layout>
     </div>
   )
 }
