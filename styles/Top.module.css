@@ -1,0 +1,19 @@
+.contents {
+    padding: 8rem 0;
+}
+
+.contents h1 {
+    color: #ea618e;
+    text-align: center;
+    border-bottom: 2px solid #ea618e;
+}
+
+.contents div {
+    text-align: center;
+}
+
+.contents div p {
+    display: inline-block;
+    text-align: left;
+    color: #ffffff;
+}
