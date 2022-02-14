@@ -1,7 +1,8 @@
 import Layout from '../components/Layout';
+import { client } from '../libs/client';
 import styles from '../styles/About.module.css';
 
-export default function About() {
+export default function About({ data }) {
     return (
         <Layout>
             <div className={styles.contents}>
@@ -47,12 +48,30 @@ export default function About() {
                         株式会社ルートゼロに入社。
                     </span>
                 </p>
-                
+
                 <h1>Skills</h1>
                 <div></div>
                 <h1>Certification</h1>
-                <div></div>
+                <div>
+                    <ul>
+                        { data.map((certification) => (
+                            <li key={certification.id}>
+                                <p>{certification.title}</p>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         </Layout>
     )
+}
+
+export const getStaticProps = async () => {
+    const data = await client.get({ endpoint: "certification" });
+
+    return {
+        props: {
+            data: data.contents || null || []
+        }
+    }
 }
