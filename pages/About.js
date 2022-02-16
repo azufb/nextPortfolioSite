@@ -53,13 +53,26 @@ export default function About({ data }) {
                 <div></div>
                 <h1>Certification</h1>
                 <div>
-                    <ul>
-                        { data.map((certification) => (
-                            <li key={certification.id}>
-                                <p>{certification.title}</p>
-                            </li>
-                        ))}
-                    </ul>
+                    <table className={styles.table}>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Title</th>
+                                <th>Tag</th>
+                                <th>Comment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            { data.map((certification) => (
+                                <tr key={certification.id} className={styles.tableRow}>
+                                    <td>{new Date(certification.date).toLocaleDateString()}</td>
+                                    <td>{certification.title}</td>
+                                    <td>#{certification.tag}</td>
+                                    <td>{certification.comment}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </Layout>

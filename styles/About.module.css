@@ -4,8 +4,7 @@
 
 .contents h1 {
     color: #ea618e;
-    text-align: center;
-    border-bottom: 2px solid #ea618e;
+    /*border-bottom: 2px solid #ea618e;*/
 }
 
 .contents p {
@@ -15,5 +14,20 @@
 .contents p span {
     display: inline-block;
     text-align: left;
+    color: #ffffff;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table thead th {
+    color: #ffffff;
+}
+
+.tableRow {
+    text-align: center;
+    border-bottom: 1px solid #ea618e;
     color: #ffffff;
 }
