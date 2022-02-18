@@ -1,7 +1,8 @@
 import Layout from '../components/Layout';
-//import { client } from '../libs/client';
+import { client } from '../libs/client';
 import styles from '../styles/Works.module.css';
 import { Pagination } from '../components/Pagination';
+import Link from 'next/link';
 
 export default function Works({ data, totalCount }) {
     return (
@@ -11,12 +12,16 @@ export default function Works({ data, totalCount }) {
                 <div className={styles.cards}>
                     {data.map((work) => (
                         <div key={work.id} className={styles.card}>
-                            <img src={work.image.url.concat('?fit=fill')} alt="今日のやること" />
-                            <div className={styles.cardContents}>
-                                <p className={styles.appName}>{work.name}</p>
-                                <p className={styles.finishedDate}>{new Date(work.date).toLocaleDateString()}</p>
-                                <p className={styles.tag}>#{work.tag}</p>
-                            </div>
+                            <Link href={`/Works/${work.id}`}>
+                                <a>
+                                    <img src={work.image.url.concat('?fit=fill')} alt="今日のやること" />
+                                    <div className={styles.cardContents}>
+                                        <p className={styles.appName}>{work.name}</p>
+                                        <p className={styles.finishedDate}>{new Date(work.date).toLocaleDateString()}</p>
+                                        <p className={styles.tag}>#{work.tag}</p>
+                                    </div>
+                                </a>
+                            </Link>
                         </div>
                     ))}
                 </div>
@@ -27,19 +32,17 @@ export default function Works({ data, totalCount }) {
 }
 
 export const getStaticProps = async () => {
-    //const data = await client.get({ endpoint: "works" });
-    const key = {
-        headers: {'X-MICROCMS-API-KEY': process.env.API_KEY},
-      };
-      const data = await fetch('https://azusa-no-portfolio.microcms.io/api/v1/works?offset=0&limit=5', key)
-        .then(res => res.json())
-        .catch(() => null);
+    const data = await client.get({
+        endpoint: "works",
+        queries: {
+            offset: 0,
+            limit: 6
+        }
+    });
 
     return {
         props: {
-            data: (data.contents).sort((a, b) => {
-                return new Date(b.date) - new Date(a.date)
-            }),
+            data: data.contents,
             totalCount: data.totalCount
         }
     }

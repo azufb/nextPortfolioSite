@@ -4,7 +4,8 @@ import Layout from "../../../components/Layout";
 import styles from "../../../styles/Works.module.css";
 import { client } from "../../../libs/client";
 
-const PER_PAGE = 5;
+const PER_PAGE = 6;
+
 export default function WorksPageId({ data, totalCount }) {
     return (
         <Layout>
@@ -34,17 +35,11 @@ export default function WorksPageId({ data, totalCount }) {
 
 // 動的なページを作成
 export const getStaticPaths = async () => {
-    const key = {
-        headers: {'X-MICROCMS-API-KEY': process.env.API_KEY},
-    };
+    const data = await client.get({ endpoint: "works" });
 
-    const res = await fetch('https://azusa-no-portfolio.microcms.io/api/v1/works', key);
-    const repos = await res.json();
-    const pageNumbers = [];
-
-    const range = (start, end) => 
+    const range = (start, end) =>
         [...Array(end - start + 1)].map((_, i) => start + i)
-    const paths = range(1, Math.ceil(repos.totalCount/PER_PAGE)).map((repo) => `/Works/page/${repo}`)
+    const paths = range(1, Math.ceil(data.totalCount/PER_PAGE)).map((work) => `/Works/page/${work}`)
 
     return { paths, fallback: false };
 }
@@ -54,8 +49,8 @@ export const getStaticProps = async (context) => {
     const data = await client.get({
         endpoint: "works",
         queries: {
-            offset: (id-1)*5,
-            limit: 5
+            offset: (id-1)*6,
+            limit: 6
         }
     });
 
