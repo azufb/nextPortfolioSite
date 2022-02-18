@@ -1,9 +1,11 @@
-import Layout from '../components/Layout';
-//import { client } from '../libs/client';
-import styles from '../styles/Works.module.css';
-import { Pagination } from '../components/Pagination';
+import Link from "next/link";
+import { Pagination } from "../../../components/Pagination";
+import Layout from "../../../components/Layout";
+import styles from "../../../styles/Works.module.css";
+import { client } from "../../../libs/client";
 
-export default function Works({ data, totalCount }) {
+const PER_PAGE = 5;
+export default function WorksPageId({ data, totalCount }) {
     return (
         <Layout>
             <div className={styles.contents}>
@@ -26,20 +28,36 @@ export default function Works({ data, totalCount }) {
     )
 }
 
-export const getStaticProps = async () => {
-    //const data = await client.get({ endpoint: "works" });
+// 動的なページを作成
+export const getStaticPaths = async () => {
     const key = {
         headers: {'X-MICROCMS-API-KEY': process.env.API_KEY},
-      };
-      const data = await fetch('https://azusa-no-portfolio.microcms.io/api/v1/works?offset=0&limit=5', key)
-        .then(res => res.json())
-        .catch(() => null);
+    };
+
+    const res = await fetch('https://azusa-no-portfolio.microcms.io/api/v1/works', key);
+    const repos = await res.json();
+    const pageNumbers = [];
+
+    const range = (start, end) => 
+        [...Array(end - start + 1)].map((_, i) => start + i)
+    const paths = range(1, Math.ceil(repos.totalCount/PER_PAGE)).map((repo) => `/Works/page/${repo}`)
+
+    return { paths, fallback: false };
+}
+
+export const getStaticProps = async (context) => {
+    const id = context.params.id;
+    const data = await client.get({
+        endpoint: "works",
+        queries: {
+            offset: (id-1)*5,
+            limit: 5
+        }
+    });
 
     return {
         props: {
-            data: (data.contents).sort((a, b) => {
-                return new Date(b.date) - new Date(a.date)
-            }),
+            data: data.contents,
             totalCount: data.totalCount
         }
     }
