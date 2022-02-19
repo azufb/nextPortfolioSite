@@ -3,6 +3,7 @@ import { Pagination } from "../../../components/Pagination";
 import Layout from "../../../components/Layout";
 import styles from "../../../styles/Works.module.css";
 import { client } from "../../../libs/client";
+import Image from "next/image";
 
 const PER_PAGE = 6;
 
@@ -16,7 +17,7 @@ export default function WorksPageId({ data, totalCount }) {
                         <div key={work.id} className={styles.card}>
                             <Link href={`/Works/${work.id}`}>
                                 <a>
-                                    <img src={work.image.url.concat('?fit=fill')} alt="今日のやること" />
+                                    <Image src={work.image.url.concat('?fit=fill')} alt="イメージ画像" />
                                     <div className={styles.cardContents}>
                                         <p className={styles.appName}>{work.name}</p>
                                         <p className={styles.finishedDate}>{new Date(work.date).toLocaleDateString()}</p>
