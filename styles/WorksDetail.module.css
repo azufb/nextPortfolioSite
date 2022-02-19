@@ -1,0 +1,18 @@
+.h1 {
+    color: #ea618e;
+}
+
+.h2 {
+    color: #ea618e;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+.text {
+    white-space: pre-wrap;
+    color: #ffffff;
+}
