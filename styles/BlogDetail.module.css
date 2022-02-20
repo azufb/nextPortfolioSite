@@ -1,0 +1,41 @@
+.h1 {
+    color: #DF205F;
+    margin: 2.5rem 0 0;
+    border-bottom: 1px dotted #E64B7E;
+    line-height: 1;
+}
+
+.h2 {
+    color: #E64B7E;
+    margin: 2.5rem 0 0;
+}
+
+.dateAndTag {
+    padding: 1rem 0;
+}
+
+.dateAndTag p {
+    margin: 0;
+}
+
+.contents {
+    white-space: pre-wrap;
+    margin-bottom: 2.5rem;
+}
+
+.linkIconGitHub {
+    font-size: 3em;
+    color: #171515;
+}
+
+.ZennLink {
+    border-radius: 10px;
+    width: 80%;
+    margin: 2.5rem auto;
+    background-color: #3FA8FF;
+    color: #ffffff;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

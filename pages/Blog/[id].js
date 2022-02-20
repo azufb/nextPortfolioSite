@@ -1,6 +1,6 @@
 import Layout from "../../components/Layout";
 import { client } from "../../libs/client";
-import styles from "../../styles/WorksDetail.module.css";
+import styles from "../../styles/BlogDetail.module.css";
 import Link from "next/link";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '../../node_modules/@fortawesome/free-brands-svg-icons' 
@@ -12,7 +12,7 @@ export default function BlogId({ blog }) {
             <div className={styles.dateAndTag}>
                 <p>リリース：{new Date(blog.publishedAt).toLocaleDateString()}</p>
             </div>
-            <div className={styles.text}>{blog.contents}</div>
+            <div className={styles.contents}>{blog.contents}</div>
             <div>
                 {(blog.GitHubURL) ? 
                     <Link href={blog.GitHubURL}>
@@ -22,16 +22,16 @@ export default function BlogId({ blog }) {
                     </Link> :
                     
                         (blog.ZennURL) ? 
-                            <div className={styles.appLink}>
+                            <div className={styles.ZennLink}>
                                 <Link href={blog.ZennURL}>
-                                    <a target="_blank" rel="noopener noreferrer">使ってみる！</a>
+                                    <a target="_blank" rel="noopener noreferrer">記事を読んでみる</a>
                                 </Link>
                             </div> :
                             
                                 (blog.url) ?
                                     <Link href={blog.url}>
                                         <a target="_blank" rel="noopener noreferrer">
-                                            遷移する。
+                                            ページに遷移する
                                         </a>
                                     </Link>
                             : 
