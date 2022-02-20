@@ -16,27 +16,27 @@ export default function About({ data }) {
             <table className={styles.profileTable}>
                 <tbody>
                     <tr className={styles.tRow}>
-                        <td className={styles.date}>1998/02/10</td>
+                        <td className={styles.date}>1998/2/10</td>
                         <td>兵庫県で生まれる。</td>
                     </tr>
                     <tr className={styles.tRow}>
-                        <td className={styles.date}>2016/04/01</td>
+                        <td className={styles.date}>2016/4/1</td>
                         <td>関西学院大学商学部入学。</td>
                     </tr>
                     <tr className={styles.tRow}>
-                        <td className={styles.date}>2020/03/31</td>
+                        <td className={styles.date}>2020/3/31</td>
                         <td>関西学院大学商学部卒業。</td>
                     </tr>
                     <tr className={styles.tRow}>
                         <td className={styles.date}>2020/10/12</td>
-                        <td>株式会社J.B.Goode入社。(フルタイムアルバイト)</td>
+                        <td>J.B.Goode株式会社入社。(フルタイムアルバイト)</td>
                     </tr>
                     <tr className={styles.tRow}>
-                        <td className={styles.date}>2021/09/30</td>
-                        <td>株式会社J.B.Goode退職。(フルタイムアルバイト)</td>
+                        <td className={styles.date}>2021/9/30</td>
+                        <td>J.B.Goode株式会社退職。(フルタイムアルバイト)</td>
                     </tr>
                     <tr className={styles.tRow}>
-                        <td className={styles.date}>2021/10/01</td>
+                        <td className={styles.date}>2021/10/1</td>
                         <td>株式会社ルートゼロ入社。<FontAwesomeIcon icon={faLocationDot} className={styles.locationDot} /></td>
                     </tr>
                 </tbody>
