@@ -42,7 +42,7 @@ export default function About({ data }) {
                 </tbody>
             </table>
 
-            <h1 className={styles.h1}>#リンク</h1>
+            <h1 className={styles.h1}>#Links</h1>
             <div className={styles.links}>
                 <Link href="https://twitter.com/azunyan_eng">
                     <a target="_blank" rel="noopener noreferrer">
