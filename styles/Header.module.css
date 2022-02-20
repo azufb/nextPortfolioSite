@@ -1,8 +1,8 @@
 .h1 {
     color: #282727;
-    margin: 0;
     text-align: center;
     cursor: pointer;
+    margin: 2.5rem 0 1rem;
 }
 
 .navs {
