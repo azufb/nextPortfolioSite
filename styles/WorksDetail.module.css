@@ -1,17 +1,51 @@
 .h1 {
     color: #E64B7E;
+    margin: 2.5rem 0 0;
+    border-bottom: 1px dotted #E64B7E;
+    line-height: 1;
 }
 
 .h2 {
     color: #E64B7E;
+    margin: 2.5rem 0 0;
+}
+
+.dateAndTag {
+    padding: 1rem 0;
+}
+
+.dateAndTag p {
+    margin: 0;
+}
+
+.imgArea {
+    text-align: center;
+    padding: 0 0 1rem;
 }
 
 .image {
-    width: 100%;
+    width: 80%;
     height: auto;
-    margin-bottom: 2rem;
 }
 
 .text {
     white-space: pre-wrap;
+}
+
+.linkIconGitHub {
+    font-size: 3em;
+    margin-right: 0.5rem;
+    color: #171515;
+}
+
+.appLink {
+    border-radius: 10px;
+    width: 80%;
+    margin: 2.5rem auto;
+    background-color: #E64B7E;
+    color: #ffffff;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
