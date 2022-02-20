@@ -1,4 +1,3 @@
-import Router from "next/router";
 import Link from "next/link";
 import styles from "../styles/Pagination.module.css";
 
@@ -9,7 +8,7 @@ export const Pagination = ({ totalCount }) => {
         [...Array(end - start + 1)].map((_, i) => start + i)
 
     return (
-        <div>
+        <div className={styles.contents}>
             {range(1, Math.ceil(totalCount/PER_PAGE)).map((number, index) => (
                 <span key={index} className={styles.span}>
                     <Link href={`/Works/page/${number}`}>
