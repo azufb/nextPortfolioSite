@@ -1,7 +1,7 @@
 import Layout from '../components/Layout';
 import { client } from '../libs/client';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMedal } from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot, faMedal } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faGithub } from '../node_modules/@fortawesome/free-brands-svg-icons' 
 import styles from '../styles/About.module.css';
 import Link from 'next/link';
@@ -13,46 +13,46 @@ export default function About({ data }) {
     return (
         <Layout>
             <h1 className={styles.h1}>#About</h1>
-            <div className={styles.profileTable}>
-                <div>
-                    <div>1998.02</div>
-                    <div>
-                        <p>兵庫県に生まれる。</p>
-                    </div>
-                </div>
-                <div>
-                    <div>2016.04</div>
-                    <div>
-                        <p>関西学院大学入学。</p>
-                    </div>
-                </div>
-                <div>
-                    <div>2020.03</div>
-                    <div>
-                        <p>関西学院大学卒業。</p>
-                    </div>
-                </div>
-                <div>
-                    <div>2020.10</div>
-                    <div>
-                        <p>株式会社J.B.Goode入社。</p>
-                    </div>
-                </div>
-                <div>
-                    <div>2021.10</div>
-                    <div>
-                        <p>株式会社ルートゼロ入社。</p>
-                    </div>
-                </div>
-            </div>
+            <table className={styles.profileTable}>
+                <tbody>
+                    <tr className={styles.tRow}>
+                        <td className={styles.date}>1998/02/10</td>
+                        <td>兵庫県で生まれる。</td>
+                    </tr>
+                    <tr className={styles.tRow}>
+                        <td className={styles.date}>2016/04/01</td>
+                        <td>関西学院大学商学部入学。</td>
+                    </tr>
+                    <tr className={styles.tRow}>
+                        <td className={styles.date}>2020/03/31</td>
+                        <td>関西学院大学商学部卒業。</td>
+                    </tr>
+                    <tr className={styles.tRow}>
+                        <td className={styles.date}>2020/10/12</td>
+                        <td>株式会社J.B.Goode入社。(フルタイムアルバイト)</td>
+                    </tr>
+                    <tr className={styles.tRow}>
+                        <td className={styles.date}>2021/09/30</td>
+                        <td>株式会社J.B.Goode退職。(フルタイムアルバイト)</td>
+                    </tr>
+                    <tr className={styles.tRow}>
+                        <td className={styles.date}>2021/10/01</td>
+                        <td>株式会社ルートゼロ入社。<FontAwesomeIcon icon={faLocationDot} className={styles.locationDot} /></td>
+                    </tr>
+                </tbody>
+            </table>
 
             <h1 className={styles.h1}>#リンク</h1>
             <div className={styles.links}>
                 <Link href="https://twitter.com/azunyan_eng">
-                    <a target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faTwitter} className={styles.linkIconTwitter} /></a>
+                    <a target="_blank" rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faTwitter} className={styles.linkIconTwitter} />
+                    </a>
                 </Link>
                 <Link href="https://github.com/azufb">
-                    <a target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} className={styles.linkIconGitHub} /></a>
+                    <a target="_blank" rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faGithub} className={styles.linkIconGitHub} />
+                    </a>
                 </Link>
                 <div className={styles.boxLinkZenn}>
                     <Link href="https://zenn.dev/azunasu">
@@ -75,7 +75,7 @@ export default function About({ data }) {
             </p>
 
             <h1 className={styles.h1}>#Skills</h1>
-            <h2 className={styles.h2}>##言語</h2>
+            <h2 className={styles.h2}>##言語(マークアップ・プログラミング)</h2>
             <div className={styles.skills}>
             {languages.map((language, index) => (
                 <div className={styles.card} key={index}>

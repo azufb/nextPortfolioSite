@@ -13,43 +13,29 @@
 
 /* 経歴 */
 .profileTable {
+    width: 100%;
     margin: 1rem 0 0;
-}
-
-.profileTable div {
-    display: flex;
-    margin-bottom: 1rem;
-}
-
-.profileTable div div:nth-child(1) {
-    background-color: #282727;
-    border-right: 0.5px solid #282727;
-    position: relative;
-    padding: 0.5rem 2rem 0.5rem 0.5rem;
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    margin: 0;
-}
-
-.profileTable div div:nth-child(1)::after {
-    content: "";
-    position: absolute;
-    left: 100%;
-	top: 50%;
-	border: solid transparent;
     border-collapse: collapse;
-	border-left-color: #282727;
-	border-width: 1.75rem;
-	margin-top: -1.75rem;
 }
 
-.profileTable div div:nth-child(2) {
-    padding-left: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
+.tRow {
+    border-bottom: 2px dotted #E64B7E;
+    color: #282727;
+}
+
+.tRow td {
+    padding: 0.5rem 0;
+    border-right: 0.5rem solid transparent;
+}
+
+.date {
+    width: 20%;
+    text-align: center;
+}
+
+.locationDot {
+    color: #DF205F;
+    font-size: 1.5em;
 }
 
 /* リンク */
@@ -91,7 +77,7 @@
 }
 
 .boxLinkWantedly {
-    background-color: #4FA2E4;
+    background-color: #20BDDB;
     color: #000000;
     border-radius: 10px;
     padding: 0.5rem;
@@ -109,6 +95,7 @@
 .linkContent {
     width: 100%;
     text-align: left;
+    color: #282727;
 }
 
 /* Skills */
@@ -130,6 +117,7 @@
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
       rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     padding: 0.5rem;
+    color: #282727;
 }
 
 .card:nth-child(4n) {
@@ -137,11 +125,12 @@
 }
 
 .skillIcon {
-    color: #E64B7E;
+    color: #EA618E;
 }
 
 .skillContent {
     margin: 0.5rem 0 1.5rem;
+    color: #282727;
 }
 
 /* 資格 */
@@ -149,6 +138,7 @@
     width: 100%;
     border-collapse: collapse;
     margin: 1rem 0 2.5rem;
+    color: #282727;
 }
 
 .table thead {
@@ -171,7 +161,7 @@
 }
 
 .tableRow td {
-    padding: 0.5% 0;
+    padding: 0.5rem 0;
     border-right: 0.5rem solid transparent;
 }
 
