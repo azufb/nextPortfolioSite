@@ -3,9 +3,8 @@
 }
 
 .contents h1 {
-    color: #ea618e;
+    color: #E64B7E;
     text-align: center;
-    border-bottom: 2px solid #ea618e;
 }
 
 .contents div {
@@ -15,5 +14,5 @@
 .contents div p {
     display: inline-block;
     text-align: left;
-    color: #ffffff;
+    color: #282727;
 }

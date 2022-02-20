@@ -7,7 +7,7 @@ body {
 }
 
 body {
-  background-color: #282727;
+  background-color: #D8D8D8;
 }
 
 a {
@@ -17,4 +17,8 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+p {
+  color: #282727;
 }

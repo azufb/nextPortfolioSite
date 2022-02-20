@@ -3,8 +3,7 @@
 }
 
 .contents h1 {
-    color: #ea618e;
-    /*border-bottom: 2px solid #ea618e;*/
+    color: #E64B7E;
 }
 
 .contents p {
@@ -14,7 +13,6 @@
 .contents p span {
     display: inline-block;
     text-align: left;
-    color: #ffffff;
 }
 
 .table {
@@ -22,12 +20,7 @@
     border-collapse: collapse;
 }
 
-.table thead th {
-    color: #ffffff;
-}
-
 .tableRow {
     text-align: center;
-    border-bottom: 1px solid #ea618e;
-    color: #ffffff;
+    border-bottom: 1px solid #E64B7E;
 }
