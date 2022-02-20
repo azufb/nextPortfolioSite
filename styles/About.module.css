@@ -20,7 +20,23 @@
     border-collapse: collapse;
 }
 
+.table thead th {
+    font-family: serif;
+    font-weight: bold;
+}
+
 .tableRow {
     text-align: center;
-    border-bottom: 1px solid #E64B7E;
+    border-bottom: 2px dotted #E64B7E;
+}
+
+.tableRow td {
+    padding: 2.5% 0;
+    border-right: 0.5rem solid transparent;
+}
+
+.span {
+    display: inline-block;
+    text-align: left;
+    padding: 1.5%;
 }

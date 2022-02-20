@@ -59,16 +59,14 @@ export default function About({ data }) {
                                 <th>Date</th>
                                 <th>Title</th>
                                 <th>Tag</th>
-                                <th>Comment</th>
                             </tr>
                         </thead>
                         <tbody>
                             { data.map((certification) => (
                                 <tr key={certification.id} className={styles.tableRow}>
                                     <td>{new Date(certification.date).toLocaleDateString()}</td>
-                                    <td>{certification.title}</td>
+                                    <td><span className={styles.span}>{certification.title}</span></td>
                                     <td>#{certification.tag}</td>
-                                    <td>{certification.comment}</td>
                                 </tr>
                             ))}
                         </tbody>
