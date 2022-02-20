@@ -10,7 +10,7 @@ export default function Header() {
                 </h1>
             </Link>
 
-            <div>
+            <div className={styles.navigation}>
                 <Link href="/About">
                     <a className={styles.navi}>About</a>
                 </Link>
