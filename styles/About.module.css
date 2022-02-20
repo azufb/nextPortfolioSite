@@ -118,6 +118,8 @@
       rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     padding: 0.5rem;
     color: #282727;
+    display: flex;
+    align-items: center;
 }
 
 .card:nth-child(4n) {
