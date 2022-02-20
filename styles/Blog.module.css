@@ -1,0 +1,46 @@
+.h1 {
+    color: #DF205F;
+    border-bottom: 1px dotted #E64B7E;
+    margin: 2.5rem 0 0;
+    line-height: 1;
+}
+
+.pageDescription {
+    margin: 1rem 0 0;
+}
+
+.cards {
+    margin: 1rem 0 2.5rem;
+}
+
+.card {
+    border: 1px solid #c1c4c4;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 2.5%;
+    margin-right: 2%;
+    background-color: #ffffff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    position: relative;
+}
+
+.card .cardContents {
+    padding: 0.5rem;
+    text-align: center;
+    display: flex;
+}
+
+.card .cardContents .title {
+    margin: 0;
+    line-height: 1.5;
+    font-weight: bold;
+    text-align: left;
+}
+
+.card .cardContents .publishedDate {
+    color: #878989 ;
+    margin: 0;
+    line-height: 1.5;
+}
