@@ -43,6 +43,8 @@
     width: 80%;
     margin: 2.5rem auto;
     background-color: #E64B7E;
+    border-bottom: 5px solid #C81D55;
+    border-right: 5px solid #C81D55;
     color: #ffffff;
     padding: 0.5rem;
     display: flex;
