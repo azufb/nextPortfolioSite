@@ -1,6 +1,7 @@
 .headerContents {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .h1 {
@@ -8,4 +9,16 @@
     margin: 0;
     text-align: center;
     cursor: pointer;
+}
+
+.navi {
+    font-size: 1.2rem;
+    color: #282727;
+}
+
+.separator {
+    padding: 0 0.5rem;
+    color: #DF205F;
+    font-weight: bold;
+    font-size: 1.2rem;
 }

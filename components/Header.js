@@ -12,10 +12,15 @@ export default function Header() {
 
             <div>
                 <Link href="/About">
-                    <a>About</a>
+                    <a className={styles.navi}>About</a>
                 </Link>
+                <span className={styles.separator}>|</span>
                 <Link href="/Works">
-                    <a>Works</a>
+                    <a className={styles.navi}>Works</a>
+                </Link>
+                <span className={styles.separator}>|</span>
+                <Link href="/Blog">
+                    <a className={styles.navi}>Blog</a>
                 </Link>
             </div>
         </div>
