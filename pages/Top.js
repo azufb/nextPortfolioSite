@@ -3,7 +3,7 @@ import styles from "../styles/Top.module.css";
 export default function Top() {
     return (
         <div className={styles.contents}>
-            <h1>Welcome!</h1>
+            <h1>Welcome</h1>
             <div>
                 <p>
                     ご来訪頂き、ありがとうございます！<br />
