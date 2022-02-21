@@ -5,6 +5,7 @@ import { faLocationDot, faMedal } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faGithub } from '../node_modules/@fortawesome/free-brands-svg-icons' 
 import styles from '../styles/About.module.css';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function About({ data }) {
     const languages = ["HTML", "CSS", "Sass", "JavaScript", "TypeScript", "PHP"];
@@ -46,27 +47,27 @@ export default function About({ data }) {
             <div className={styles.links}>
                 <Link href="https://twitter.com/azunyan_eng">
                     <a target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faTwitter} className={styles.linkIconTwitter} />
+                        <Image src="/images/twitterLogo.svg" alt='Qiita' width={50} height={50} />
                     </a>
                 </Link>
                 <Link href="https://github.com/azufb">
                     <a target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faGithub} className={styles.linkIconGitHub} />
+                        <Image src="/images/gitHubLogo.png" alt='Qiita' width={50} height={50} />
                     </a>
                 </Link>
-                <div className={styles.boxLinkZenn}>
-                    <Link href="https://zenn.dev/azunasu">
-                        <a target="_blank" rel="noopener noreferrer">Zenn</a>
-                    </Link>
-                </div>
-                <div className={styles.boxLinkQiita}>
-                    <Link href="https://qiita.com/azu_nyan">
-                        <a target="_blank" rel="noopener noreferrer">Qiita</a>
-                    </Link>
-                </div>
+                <Link href="https://zenn.dev/azunasu">
+                    <a><Image src="/images/qiitaLogo.png" alt='Qiita' width={50} height={50} /></a>
+                </Link>
+                <Link href="https://zenn.dev/azunasu">
+                    <a>
+                        <Image src="/images/zennLogo.svg" alt='Zenn' width={50} height={50} />
+                    </a>
+                </Link>
                 <div className={styles.boxLinkWantedly}>
                     <Link href="https://www.wantedly.com/id/azusa_okamoto">
-                        <a target="_blank" rel="noopener noreferrer">Wantedly</a>
+                        <a target="_blank" rel="noopener noreferrer">
+                            <Image src="/images/wantedlyVisit.svg" alt='Zenn' layout='fill' objectFit='contain' />
+                        </a>
                     </Link>
                 </div>
             </div>
