@@ -28,9 +28,16 @@
     border-right: 0.5rem solid transparent;
 }
 
-.date {
-    width: 20%;
-    text-align: center;
+@media screen and (min-width: 280px) {
+    .date {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .date {
+        width: 10%;
+    }
 }
 
 .locationDot {
@@ -39,43 +46,6 @@
 }
 
 /* リンク */
-.linkIconTwitter {
-    font-size: 3em;
-    margin-right: 0.5rem;
-    color: #1DA1F2;
-}
-
-.linkIconGitHub {
-    font-size: 3em;
-    margin-right: 0.5rem;
-    color: #171515;
-}
-
-.boxLinkZenn {
-    background-color: #3FA8FF;
-    color: #ffffff;
-    border-radius: 10px;
-    padding: 0.5rem;
-    width: 10%;
-    margin-right: 0.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.boxLinkQiita {
-    background-color: #56C600;
-    color: #ffffff;
-    border-radius: 10px;
-    padding: 0.5rem;
-    margin-right: 0.5rem;
-    text-align: center;
-    width: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .boxLinkWantedly {
     background-color: #21BDDB;
     border-radius: 10px;
@@ -83,9 +53,29 @@
     position: relative;
 }
 
-.links {
-    display: flex;
-    margin-top: 1rem;
+@media screen and (min-width: 280px) {
+    .links {
+        display: flex;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width: 350px) {
+    .links {
+        justify-content: space-around;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .links {
+        justify-content: initial;
+    }
+
+    .linkIcon {
+        margin-right: 0.5rem;
+    }
 }
 
 .linkContent {
@@ -102,24 +92,46 @@
     margin: 0;
 }
 
-.card {
-    border: 1px solid #c1c4c4;
-    border-radius: 10px;
-    width: 20%;
-    height: auto;
-    margin-bottom: 0.75rem;
-    margin-right: 5%;
-    background-color: #ffffff;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-    padding: 0.5rem;
-    color: #282727;
-    display: flex;
-    align-items: center;
+@media screen and (min-width: 280px) {
+    .card {
+        border: 1px solid #c1c4c4;
+        border-radius: 10px;
+        width: 45vw;
+        height: auto;
+        margin: 0 auto 0.75rem;
+        background-color: #ffffff;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+          rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        padding: 0.5rem;
+        color: #282727;
+        display: flex;
+        align-items: center;
+    }
 }
 
-.card:nth-child(4n) {
-    margin-right: 0;
+@media screen and (min-width: 1000px) {
+    .card {
+        width: 40vw;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .skills {
+        justify-content: space-between;
+    }
+
+    .card {
+        width: 20vw;
+        margin: 0 2% 1.5rem 0;
+    }
+
+    .card:nth-child(2n) {
+        margin-right: 2%;
+    }
+
+    .card:nth-child(3n) {
+        margin-right: 0;
+    }
 }
 
 .skillIcon {
@@ -149,8 +161,24 @@
     width: 30%;
 }
 
-.table thead th:nth-child(3), .table thead th:nth-child(1) {
-    width: 10%;
+@media screen and (min-width: 280px) {
+    .table thead th:nth-child(1) {
+        width: 5%;
+    }
+
+    .table thead th:nth-child(2) {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 350px) {
+    .table thead th:nth-child(3) {
+        width: 15%;
+    }
+
+    .table thead th:nth-child(2) {
+        width: 40%;
+    }
 }
 
 .tableRow {
