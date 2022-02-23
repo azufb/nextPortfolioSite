@@ -13,6 +13,8 @@
     padding: 0.5rem;
     text-align: center;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .card .cardContents .title {
@@ -20,6 +22,10 @@
     line-height: 1.5;
     font-weight: bold;
     text-align: left;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
 }
 
 .card .cardContents .publishedDate {
@@ -38,7 +44,7 @@
         border-radius: 10px;
         width: 90%;
         height: auto;
-        margin: 0 auto 1.5rem;
+        margin: 0 auto 0.5rem;
         background-color: #ffffff;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
           rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
@@ -49,6 +55,6 @@
 @media screen and (min-width: 1200px) {
     .card {
         width: 100%;
-        margin: 0 2% 1.5rem 0;
+        margin: 0 2% 1rem 0;
     }
 }

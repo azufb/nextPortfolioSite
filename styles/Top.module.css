@@ -1,17 +1,47 @@
-
-
-.contents h1 {
+.h1 {
     color: #DF205F;
-    text-align: center;
-    padding: 2.5rem 0;
+    border-bottom: 1px dotted #EA618E;
+    line-height: 1;
+    margin: 2.5rem 0 0;
 }
 
-.contents div {
-    text-align: center;
+@media screen and (min-width: 280px) {
+    .newsList {
+        margin: 1rem auto 2.5rem;
+        width: 100%;
+    }
+    
+    .news {
+        width: 100%;
+        height: auto;
+    }
 }
 
-.contents div p {
-    display: inline-block;
+.news .newsContents {
+    padding: 0 0 1rem ;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.news .newsContents .title {
+    margin: 0;
+    line-height: 1.5;
+    font-weight: bold;
     text-align: left;
-    color: #282727;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+.news .newsContents .publishedDate {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.linkToBlogList {
+    margin: 0;
+    text-align: right;
+    color: #EA618E;
 }

@@ -5,20 +5,28 @@ import { client } from '../libs/client';
 export default function Top({ blogs }) {
     return (
         <div className={styles.contents}>
-            {blogs.map((blog) => (
-                <div key={blog.id} className={styles.card}>
-                    <Link href={`/Blog/${blog.id}`}>
-                        <a>
-                            <div className={styles.cardContents}>
-                                <p className={styles.title}>{blog.title}</p>
-                                <p className={styles.publishedDate}>{new Date(blog.publishedAt).toLocaleDateString()}</p>
-                            </div>
-                        </a>
+            <h1 className={styles.h1}>#News</h1>
+            <div className={styles.newsList}>
+                {blogs.map((blog) => (
+                    <div key={blog.id} className={styles.news}>
+                        <Link href={`/Blog/${blog.id}`}>
+                            <a>
+                                <div className={styles.newsContents}>
+                                    <p className={styles.title}>{blog.title}</p>
+                                    <p className={styles.publishedDate}>{new Date(blog.publishedAt).toLocaleDateString()}</p>
+                                </div>
+                            </a>
+                        </Link>
+                    </div>
+                ))}
+                <p className={styles.linkToBlogList}>
+                    <Link href={`/Blog/`}>
+                        <a>全てのニュースを確認する＞</a>
                     </Link>
-                </div>
-            ))}
-            <h1>Welcome</h1>
-            <div>
+                </p>
+            </div>
+            <h1 className={styles.h1}>#Welcome！</h1>
+            <div className={styles.messages}>
                 <p>
                     ご来訪頂き、ありがとうございます！<br />
                     こちらは、Azuのポートフォリオサイトです！<br />
