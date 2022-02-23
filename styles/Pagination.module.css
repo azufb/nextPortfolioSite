@@ -7,3 +7,10 @@
     padding: 0.5rem;
     color: #DF205F;
 }
+
+.spanCurrent {
+    border: 1px solid #DF205F;
+    padding: 0.5rem;
+    background-color: #DF205F;
+    color: #ffffff;
+}

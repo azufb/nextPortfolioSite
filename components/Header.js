@@ -1,26 +1,55 @@
 import Link from 'next/link';
 import styles from '../styles/Header.module.css';
+import { useRouter } from "next/router";
 
 export default function Header() {
+    const router = useRouter();
+
     return (
         <div className={styles.headerContents}>
-            <Link href="/" passHref>
-                <h1 className={styles.h1}>
-                    Azu&apos;s Portfolio Site
-                </h1>
-            </Link>
+            <h1 className={styles.h1}>
+                Azu&apos;s Portfolio Site
+            </h1>
 
             <div className={styles.navs}>
-                <Link href="/About">
-                    <a className={styles.navi}>About</a>
+                <Link href="/" passHref>
+                    <span className={
+                        router.asPath === "/" ?
+                        styles.spanCurrent :
+                        ""
+                    }>
+                        <a className={styles.navi}>Home</a>
+                    </span>
                 </Link>
                 <span className={styles.separator}>/</span>
-                <Link href="/Works">
-                    <a className={styles.navi}>Works</a>
+                <Link href="/About" passHref>
+                    <span className={
+                        router.asPath === "/About" ?
+                        styles.spanCurrent :
+                        ""
+                    }>
+                        <a className={styles.navi}>About</a>
+                    </span>
                 </Link>
                 <span className={styles.separator}>/</span>
-                <Link href="/Blog">
-                    <a className={styles.navi}>Blog</a>
+                <Link href="/Works/page/1" passHref>
+                    <span className={
+                        router.asPath.includes("/Works/page/") ?
+                        styles.spanCurrent :
+                        ""
+                    }>
+                        <a className={styles.navi}>Works</a>
+                    </span>
+                </Link>
+                <span className={styles.separator}>/</span>
+                <Link href="/Blog" passHref>
+                    <span className={
+                        router.asPath.includes("/Blog") ?
+                        styles.spanCurrent :
+                        ""
+                    }>
+                        <a className={styles.navi}>Blog</a>
+                    </span>
                 </Link>
             </div>
         </div>

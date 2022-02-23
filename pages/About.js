@@ -44,28 +44,28 @@ export default function About({ data }) {
 
             <h1 className={styles.h1}>#LINKS</h1>
             <div className={styles.links}>
-                <Link href="https://twitter.com/azunyan_eng">
+                <Link href={process.env.NEXT_PUBLIC_TWITTER_URL}>
                     <a target="_blank" rel="noopener noreferrer" className={styles.linkIcon}>
                         <Image src="/images/twitterLogo.svg" alt='Twitter' width={50} height={50} />
                     </a>
                 </Link>
-                <Link href="https://github.com/azufb">
+                <Link href={process.env.NEXT_PUBLIC_GITHUB_URL}>
                     <a target="_blank" rel="noopener noreferrer" className={styles.linkIcon}>
                         <Image src="/images/gitHubLogo.png" alt='GitHub' width={50} height={50} />
                     </a>
                 </Link>
-                <Link href="https://zenn.dev/azunasu">
-                    <a className={styles.linkIcon}>
+                <Link href={process.env.NEXT_PUBLIC_QIITA_URL}>
+                    <a target="_blank" rel="noopener noreferrer" className={styles.linkIcon}>
                         <Image src="/images/qiitaLogo.png" alt='Qiita' width={50} height={50} />
                     </a>
                 </Link>
-                <Link href="https://zenn.dev/azunasu" className={styles.linkIcon}>
-                    <a className={styles.linkIcon}>
+                <Link href={process.env.NEXT_PUBLIC_ZENN_URL} className={styles.linkIcon}>
+                    <a target="_blank" rel="noopener noreferrer" className={styles.linkIcon}>
                         <Image src="/images/zennLogo.svg" alt='Zenn' width={50} height={50} />
                     </a>
                 </Link>
                 <div className={styles.boxLinkWantedly}>
-                    <Link href="https://www.wantedly.com/id/azusa_okamoto">
+                    <Link href={process.env.NEXT_PUBLIC_WANTEDLY_URL}>
                         <a target="_blank" rel="noopener noreferrer">
                             <Image src="/images/wantedlyVisit.svg" alt='Wantedly' layout='fill' objectFit='contain' />
                         </a>

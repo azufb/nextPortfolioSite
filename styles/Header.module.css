@@ -1,17 +1,9 @@
-.h1 {
-    color: #282727;
-    text-align: center;
-    cursor: pointer;
-    margin: 2.5rem 0 1rem;
-}
-
 .navs {
     text-align: center;
 }
 
-.navi {
-    font-size: 1.2rem;
-    color: #282727;
+.spanCurrent {
+    border-bottom: 2px dotted #DF205F;
 }
 
 .separator {
@@ -19,4 +11,37 @@
     color: #DF205F;
     font-weight: bold;
     font-size: 1.2rem;
+}
+
+@media screen and (min-width: 280px) {
+    .h1 {
+        color: #282727;
+        text-align: center;
+        cursor: pointer;
+        margin: 2.5rem 0 0.5rem;
+        font-size: 2.3rem;
+    }
+
+    .navi {
+        font-size: 1rem;
+        color: #282727;
+    }
+}
+
+@media screen and (min-width: 350px) {
+    .h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (min-width: 540px) {
+    .h1 {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .navi {
+        font-size: 1.2rem;
+    }
 }
