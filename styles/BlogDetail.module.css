@@ -1,0 +1,57 @@
+.h1 {
+    color: #DF205F;
+    margin: 2.5rem 0 0;
+    border-bottom: 1px dotted #E64B7E;
+    line-height: 1;
+}
+
+.h2 {
+    color: #E64B7E;
+    margin: 2.5rem 0 0;
+}
+
+.dateAndTag {
+    padding: 1rem 0;
+}
+
+.dateAndTag p {
+    margin: 0;
+}
+
+.contents {
+    white-space: pre-wrap;
+    margin-bottom: 2.5rem;
+}
+
+.linkIconGitHub {
+    font-size: 3em;
+    color: #171515;
+}
+
+.zennLink {
+    border-radius: 10px;
+    width: 80%;
+    margin: 2.5rem auto;
+    background-color: #3FA8FF;
+    border-bottom: 5px solid #0584ED;
+    border-right: 5px solid #0584ED;
+    color: #ffffff;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.qiitaLink {
+    border-radius: 10px;
+    width: 80%;
+    margin: 2.5rem auto;
+    background-color: #55c500;
+    border-bottom: 5px solid #4AA903;
+    border-right: 5px solid #4AA903;
+    color: #ffffff;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,10 +1,22 @@
-.headerContents {
-    display: flex;
-    justify-content: space-between;
+.h1 {
+    color: #282727;
+    text-align: center;
+    cursor: pointer;
+    margin: 2.5rem 0 1rem;
 }
 
-.h1 {
-    color: #ea618e;
-    margin: 0;
+.navs {
     text-align: center;
+}
+
+.navi {
+    font-size: 1.2rem;
+    color: #282727;
+}
+
+.separator {
+    padding: 0 0.5rem;
+    color: #DF205F;
+    font-weight: bold;
+    font-size: 1.2rem;
 }

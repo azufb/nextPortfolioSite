@@ -1,19 +1,191 @@
-.contents {
-    padding: 2rem 0;
+.h1 {
+    color: #DF205F;
+    border-bottom: 1px dotted #EA618E;
+    line-height: 1;
+    margin: 2.5rem 0 0;
 }
 
-.contents h1 {
-    color: #ea618e;
+.h2 {
+    color: #EA618E;
+    line-height: 1;
+    margin: 1rem 0;
+}
+
+/* 経歴 */
+.profileTable {
+    width: 100%;
+    margin: 1rem 0 0;
+    border-collapse: collapse;
+}
+
+.tRow {
+    border-bottom: 2px dotted #E64B7E;
+    color: #282727;
+}
+
+.tRow td {
+    padding: 0.5rem 0;
+    border-right: 0.5rem solid transparent;
+}
+
+@media screen and (min-width: 280px) {
+    .date {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .date {
+        width: 10%;
+    }
+}
+
+.locationDot {
+    color: #DF205F;
+    font-size: 1.5em;
+}
+
+/* リンク */
+@media screen and (min-width: 280px) {
+    .links {
+        display: flex;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .boxLinkWantedly {
+        background-color: #21BDDB;
+        border-radius: 10px;
+        width: 30vw;
+        height: 3em;
+        position: relative;
+    }
+
+    .linkContent {
+        width: 100%;
+        text-align: left;
+        color: #282727;
+        margin: 1rem 0 0;
+    }
+}
+
+@media screen and (min-width: 350px) {
+    .links {
+        justify-content: space-around;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .boxLinkWantedly {
+        width: 20vw;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .links {
+        justify-content: initial;
+    }
+
+    .linkIcon {
+        margin-right: 0.5rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .boxLinkWantedly {
+        width: 10vw;
+    }
+}
+
+/* Skills */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+}
+
+@media screen and (min-width: 280px) {
+    .card {
+        width: 50vw;
+        height: auto;
+        margin: 0 0 0.5rem;
+        color: #282727;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .card {
+        width: 35vw;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .card {
+        width: 30vw;
+    }
+}
+
+.skillIcon {
+    color: #EA618E;
+}
+
+.skillContent {
+    margin: 1rem 0 1.5rem;
+    color: #282727;
+}
+
+/* 資格 */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0 2.5rem;
+    color: #282727;
+}
+
+.table thead {
+    background-color: #BFBFBF;
+}
+
+.table thead th {
+    font-family: serif;
+    font-weight: bold;
+    width: 30%;
+}
+
+@media screen and (min-width: 280px) {
+    .table thead th:nth-child(1) {
+        width: 5%;
+    }
+
+    .table thead th:nth-child(2) {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 350px) {
+    .table thead th:nth-child(3) {
+        width: 15%;
+    }
+
+    .table thead th:nth-child(2) {
+        width: 40%;
+    }
+}
+
+.tableRow {
     text-align: center;
-    border-bottom: 2px solid #ea618e;
+    border-bottom: 2px dotted #E64B7E;
 }
 
-.contents p {
-    text-align: center;
+.tableRow td {
+    padding: 0.5rem 0;
+    border-right: 0.5rem solid transparent;
 }
 
-.contents p span {
+.span {
     display: inline-block;
     text-align: left;
-    color: #ffffff;
+    padding: 1.5%;
 }
