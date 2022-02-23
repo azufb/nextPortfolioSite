@@ -46,12 +46,12 @@ export default function About({ data }) {
             <div className={styles.links}>
                 <Link href="https://twitter.com/azunyan_eng">
                     <a target="_blank" rel="noopener noreferrer" className={styles.linkIcon}>
-                        <Image src="/images/twitterLogo.svg" alt='Qiita' width={50} height={50} />
+                        <Image src="/images/twitterLogo.svg" alt='Twitter' width={50} height={50} />
                     </a>
                 </Link>
                 <Link href="https://github.com/azufb">
                     <a target="_blank" rel="noopener noreferrer" className={styles.linkIcon}>
-                        <Image src="/images/gitHubLogo.png" alt='Qiita' width={50} height={50} />
+                        <Image src="/images/gitHubLogo.png" alt='GitHub' width={50} height={50} />
                     </a>
                 </Link>
                 <Link href="https://zenn.dev/azunasu">
@@ -64,13 +64,13 @@ export default function About({ data }) {
                         <Image src="/images/zennLogo.svg" alt='Zenn' width={50} height={50} />
                     </a>
                 </Link>
-                {/*<div className={styles.boxLinkWantedly}>
+                <div className={styles.boxLinkWantedly}>
                     <Link href="https://www.wantedly.com/id/azusa_okamoto">
                         <a target="_blank" rel="noopener noreferrer">
-                            <Image src="/images/wantedlyVisit.svg" alt='Zenn' layout='fill' objectFit='contain' />
+                            <Image src="/images/wantedlyVisit.svg" alt='Wantedly' layout='fill' objectFit='contain' />
                         </a>
                     </Link>
-                </div>*/}
+                </div>
             </div>
             <p className={styles.linkContent}>
                 実務や学習中、個人開発中の学びについて、ZennやQiitaで技術記事を投稿しています！
