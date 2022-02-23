@@ -7,13 +7,21 @@ export default function Header() {
 
     return (
         <div className={styles.headerContents}>
-            <Link href="/" passHref>
-                <h1 className={styles.h1}>
-                    Azu&apos;s Portfolio Site
-                </h1>
-            </Link>
+            <h1 className={styles.h1}>
+                Azu&apos;s Portfolio Site
+            </h1>
 
             <div className={styles.navs}>
+                <Link href="/" passHref>
+                    <span className={
+                        router.asPath === "/" ?
+                        styles.spanCurrent :
+                        ""
+                    }>
+                        <a className={styles.navi}>Home</a>
+                    </span>
+                </Link>
+                <span className={styles.separator}>/</span>
                 <Link href="/About" passHref>
                     <span className={
                         router.asPath === "/About" ?
