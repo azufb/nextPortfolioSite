@@ -5,7 +5,7 @@ import { client } from '../libs/client';
 export default function Top({ blogs }) {
     return (
         <div className={styles.contents}>
-            <h1 className={styles.h1}>#News</h1>
+            <h1 className={styles.h1}>#NEWS</h1>
             {blogs.length === 0 ?
                 (
                     <p>現在、新着Newsはありません。</p>
@@ -33,7 +33,7 @@ export default function Top({ blogs }) {
                 )
             }
 
-            <h1 className={styles.h1}>#Welcome！</h1>
+            <h1 className={styles.h1}>#WELCOME</h1>
             <div className={styles.messages}>
                 <p>
                     ご来訪頂き、ありがとうございます！<br />

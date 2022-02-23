@@ -9,7 +9,7 @@ const PER_PAGE = 6;
 export default function WorksPageId({ data, totalCount }) {
     return (
         <Layout>
-            <h1 className={styles.h1}>#Works</h1>
+            <h1 className={styles.h1}>#WORKS</h1>
             <div className={styles.cards}>
                 {data.map((work) => (
                     <div key={work.id} className={styles.card}>

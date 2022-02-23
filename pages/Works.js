@@ -7,7 +7,7 @@ import Link from 'next/link';
 export default function Works({ data, totalCount }) {
     return (
         <Layout>
-            <h1 className={styles.h1}>#Works</h1>
+            <h1 className={styles.h1}>#WORKS</h1>
             <p className={styles.pageDescription}>
                 各アプリケーションをクリックすると、詳細ページに遷移します。
             </p>

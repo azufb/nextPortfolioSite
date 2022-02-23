@@ -22,6 +22,10 @@ p {
   color: #282727;
 }
 
-h1, h2 {
-  font-family: serif;
+h1 {
+  font-family: 'forum', 'Noto Serif JP', cursive;
+}
+
+h2 {
+  font-family: 'Noto Serif JP', serif;
 }

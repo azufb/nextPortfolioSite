@@ -7,7 +7,7 @@ import Link from 'next/link';
 export default function Blog({ data, totalCount }) {
     return (
         <Layout>
-            <h1 className={styles.h1}>#Blog</h1>
+            <h1 className={styles.h1}>#BLOG</h1>
             {data.length === 0 ? 
                 (
                     <p>コンテンツがまだ投稿されていません。</p>

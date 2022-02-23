@@ -9,7 +9,7 @@ const PER_PAGE = 6;
 export default function BlogPageId({ data, totalCount }) {
     return (
         <Layout>
-            <h1 className={styles.h1}>#Blog</h1>
+            <h1 className={styles.h1}>#BLOG</h1>
             {data.length === 0 ?
                 (
                     <p>コンテンツがまだ投稿されていません。</p>

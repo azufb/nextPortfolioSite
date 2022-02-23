@@ -12,7 +12,7 @@ export default function About({ data }) {
 
     return (
         <Layout>
-            <h1 className={styles.h1}>#About</h1>
+            <h1 className={styles.h1}>#ABOUT</h1>
             <table className={styles.profileTable}>
                 <tbody>
                     <tr className={styles.tRow}>
@@ -42,7 +42,7 @@ export default function About({ data }) {
                 </tbody>
             </table>
 
-            <h1 className={styles.h1}>#Links</h1>
+            <h1 className={styles.h1}>#LINKS</h1>
             <div className={styles.links}>
                 <Link href="https://twitter.com/azunyan_eng">
                     <a target="_blank" rel="noopener noreferrer" className={styles.linkIcon}>
@@ -76,7 +76,7 @@ export default function About({ data }) {
                 実務や学習中、個人開発中の学びについて、ZennやQiitaで技術記事を投稿しています！
             </p>
 
-            <h1 className={styles.h1}>#Skills</h1>
+            <h1 className={styles.h1}>#SKILLS</h1>
             <h2 className={styles.h2}>##言語(マークアップ・プログラミング)</h2>
             <div className={styles.skills}>
             {languages.map((language, index) => (
@@ -105,7 +105,7 @@ export default function About({ data }) {
                 Reactは実務での使用経験はありますが、保守対応でした。<br />
             </p>
             
-            <h1 className={styles.h1}>#Certification</h1>
+            <h1 className={styles.h1}>#CERTIFICATION</h1>
             <table className={styles.table}>
                 <thead>
                     <tr>
