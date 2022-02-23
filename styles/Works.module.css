@@ -47,6 +47,7 @@
 @media screen and (min-width: 1000px) {
     .card {
         width: 40vw;
+        margin: 0;
     }
 }
 
@@ -54,14 +55,13 @@
     .cards {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
         margin-top: 1rem;
     }
     
     .card {
         width: 20vw;
         height: auto;
-        margin: 0 2% 1rem 0;
+        margin: 0 1rem 1rem 0;
     }
     
     .card:nth-child(3n) {

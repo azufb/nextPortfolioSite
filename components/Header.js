@@ -1,7 +1,10 @@
 import Link from 'next/link';
 import styles from '../styles/Header.module.css';
+import { useRouter } from "next/router";
 
 export default function Header() {
+    const router = useRouter();
+
     return (
         <div className={styles.headerContents}>
             <Link href="/" passHref>
@@ -11,16 +14,34 @@ export default function Header() {
             </Link>
 
             <div className={styles.navs}>
-                <Link href="/About">
-                    <a className={styles.navi}>About</a>
+                <Link href="/About" passHref>
+                    <span className={
+                        router.asPath === "/About" ?
+                        styles.spanCurrent :
+                        ""
+                    }>
+                        <a className={styles.navi}>About</a>
+                    </span>
                 </Link>
                 <span className={styles.separator}>/</span>
-                <Link href="/Works">
-                    <a className={styles.navi}>Works</a>
+                <Link href="/Works" passHref>
+                    <span className={
+                        router.asPath === "/Works" ?
+                        styles.spanCurrent :
+                        ""
+                    }>
+                        <a className={styles.navi}>Works</a>
+                    </span>
                 </Link>
                 <span className={styles.separator}>/</span>
-                <Link href="/Blog">
-                    <a className={styles.navi}>Blog</a>
+                <Link href="/Blog" passHref>
+                    <span className={
+                        router.asPath === "/Blog" ?
+                        styles.spanCurrent :
+                        ""
+                    }>
+                        <a className={styles.navi}>Blog</a>
+                    </span>
                 </Link>
             </div>
         </div>

@@ -2,6 +2,10 @@
     text-align: center;
 }
 
+.spanCurrent {
+    border-bottom: 2px dotted #DF205F;
+}
+
 .separator {
     padding: 0 0.5rem;
     color: #DF205F;
