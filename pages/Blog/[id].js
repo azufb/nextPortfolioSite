@@ -22,22 +22,22 @@ export default function BlogId({ blog }) {
                     </Link> :
                     
                         (blog.ZennURL) ? 
-                            <div className={styles.ZennLink}>
+                            <div className={styles.zennLink}>
                                 <Link href={blog.ZennURL}>
-                                    <a target="_blank" rel="noopener noreferrer">記事を読んでみる</a>
+                                    <a target="_blank" rel="noopener noreferrer">Zennで記事を読んでみる</a>
                                 </Link>
                             </div> :
                             
-                                (blog.url) ?
-                                    <Link href={blog.url}>
+                                (blog.QiitaURL) ?
+                                <div className={styles.qiitaLink}>
+                                    <Link href={blog.QiitaURL}>
                                         <a target="_blank" rel="noopener noreferrer">
-                                            ページに遷移する
+                                        Qiitaで記事を読んでみる
                                         </a>
                                     </Link>
-                            : 
-                            (
-                                <></>
-                            )
+                                </div> : 
+                                
+                                (<></>)
                     
                 }
             </div>
