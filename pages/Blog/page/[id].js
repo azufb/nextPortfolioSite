@@ -10,20 +10,27 @@ export default function BlogPageId({ data, totalCount }) {
     return (
         <Layout>
             <h1 className={styles.h1}>#Blog</h1>
-            <div className={styles.cards}>
-                {data.map((blog) => (
-                    <div key={blog.id} className={styles.card}>
-                        <Link href={`/Blog/${blog.id}`}>
-                            <a>
-                                <div className={styles.cardContents}>
-                                    <p className={styles.title}>{blog.title}</p>
-                                    <p className={styles.publishedDate}>{new Date(blog.publishedAt).toLocaleDateString()}</p>
-                                </div>
-                            </a>
-                        </Link>
+            {data.length === 0 ?
+                (
+                    <p>コンテンツがまだ投稿されていません。</p>
+                ) :
+                (
+                    <div className={styles.cards}>
+                        {data.map((blog) => (
+                            <div key={blog.id} className={styles.card}>
+                                <Link href={`/Blog/${blog.id}`}>
+                                    <a>
+                                        <div className={styles.cardContents}>
+                                            <p className={styles.title}>{blog.title}</p>
+                                            <p className={styles.publishedDate}>{new Date(blog.publishedAt).toLocaleDateString()}</p>
+                                        </div>
+                                    </a>
+                                </Link>
+                            </div>
+                        ))}
                     </div>
-                ))}
-            </div>
+                )
+            }
             <Pagination totalCount={totalCount} />
         </Layout>
     )
