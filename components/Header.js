@@ -34,7 +34,7 @@ export default function Header() {
                 <span className={styles.separator}>/</span>
                 <Link href="/Works/page/1" passHref>
                     <span className={
-                        router.asPath.includes("/Works/page/") ?
+                        router.asPath.includes("/Works/") ?
                         styles.spanCurrent :
                         ""
                     }>
