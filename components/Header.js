@@ -14,11 +14,11 @@ export default function Header() {
                 <Link href="/About">
                     <a className={styles.navi}>About</a>
                 </Link>
-                <span className={styles.separator}>|</span>
+                <span className={styles.separator}>/</span>
                 <Link href="/Works">
                     <a className={styles.navi}>Works</a>
                 </Link>
-                <span className={styles.separator}>|</span>
+                <span className={styles.separator}>/</span>
                 <Link href="/Blog">
                     <a className={styles.navi}>Blog</a>
                 </Link>
