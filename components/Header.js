@@ -34,7 +34,7 @@ export default function Header() {
                 <span className={styles.separator}>/</span>
                 <Link href="/Works" passHref>
                     <span className={
-                        router.asPath === "/Works" ?
+                        router.asPath === "/Works" || "/Works/page/[id]" ?
                         styles.spanCurrent :
                         ""
                     }>
@@ -44,7 +44,7 @@ export default function Header() {
                 <span className={styles.separator}>/</span>
                 <Link href="/Blog" passHref>
                     <span className={
-                        router.asPath === "/Blog" ?
+                        router.asPath === "/Blog" || "/Blog/page/[id]" ?
                         styles.spanCurrent :
                         ""
                     }>
