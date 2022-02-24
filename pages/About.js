@@ -19,7 +19,7 @@ const About = ({ data }) => {
                 <tbody>
                     {profileData.map((profile, index) => (
                         <tr className={styles.tRow} key={index}>
-                            <td className={styles.date}>{formatDate(profile.year, (profile.month - 1), profile.date)}</td>
+                            <td className={styles.date}>{formatDate(profile.year, profile.month, profile.date)}</td>
                             <td>
                                 <p>
                                     {profile.event}
