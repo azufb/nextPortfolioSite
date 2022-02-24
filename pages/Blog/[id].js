@@ -6,17 +6,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '../../node_modules/@fortawesome/free-brands-svg-icons';
 import { formatDate } from "../../libs/dateFormat";
 
-const BlogId = ({ blog }) => {
+const BlogId = ({ article }) => {
     return (
         <Layout>
-            <h1 className={styles.h1}>#{blog.title}</h1>
+            <h1 className={styles.h1}>#{article.title}</h1>
             <div className={styles.dateAndTag}>
-                <p>リリース：{formatDate(blog.publishedAt)}</p>
+                <p>リリース：{formatDate(article.publishedAt)}</p>
             </div>
-            <div className={styles.contents}>{blog.contents}</div>
+            <div className={styles.contents}>{article.contents}</div>
             <div>
                 {(blog.GitHubURL) ? 
-                    <Link href={blog.GitHubURL}>
+                    <Link href={article.GitHubURL}>
                         <a target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faGithub} className={styles.linkIconGitHub} />
                         </a>
@@ -24,14 +24,14 @@ const BlogId = ({ blog }) => {
                     
                         (blog.ZennURL) ? 
                             <div className={styles.zennLink}>
-                                <Link href={blog.ZennURL}>
+                                <Link href={article.ZennURL}>
                                     <a target="_blank" rel="noopener noreferrer">Zennで記事を読んでみる</a>
                                 </Link>
                             </div> :
                             
                                 (blog.QiitaURL) ?
                                 <div className={styles.qiitaLink}>
-                                    <Link href={blog.QiitaURL}>
+                                    <Link href={article.QiitaURL}>
                                         <a target="_blank" rel="noopener noreferrer">
                                         Qiitaで記事を読んでみる
                                         </a>
@@ -49,20 +49,20 @@ const BlogId = ({ blog }) => {
 export default BlogId;
 
 export const getStaticPaths = async () => {
-    const data = await client.get({ endpoint: process.env.ENDPOINT_BLOG });
+    const articles = await client.get({ endpoint: process.env.ENDPOINT_ARTICLES });
 
-    const paths = data.contents.map((blog) => `/Articles/${blog.id}` );
+    const paths = articles.contents.map((article) => `/Articles/${article.id}` );
     
     return { paths, fallback: false };
 };
 
 export const getStaticProps = async (context) => {
     const id = context.params.id;
-    const data = await client.get({ endpoint: process.env.ENDPOINT_BLOG, contentId: id });
+    const data = await client.get({ endpoint: process.env.ENDPOINT_ARTICLES, contentId: id });
 
     return {
         props: {
-            blog: data
+            article: data
         }
     }
 }

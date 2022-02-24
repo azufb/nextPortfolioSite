@@ -5,24 +5,24 @@ import { ArticlesPagination } from '../components/ArticlesPagination';
 import Link from 'next/link';
 import { formatDate } from '../libs/dateFormat';
 
-const Blog = ({ data, totalCount }) => {
+const Blog = ({ articles, totalCount }) => {
 
     return (
         <Layout>
-            <h1 className={styles.h1}>#BLOG</h1>
-            {data.length === 0 ? 
+            <h1 className={styles.h1}>#ARTICLES</h1>
+            {articles.length === 0 ? 
                 (
                     <p>コンテンツがまだ投稿されていません。</p>
                 ) :
                 (
                     <div className={styles.cards}>
-                        {data.map((blog) => (
-                            <div key={blog.id} className={styles.card}>
-                                <Link href={`/Articles/${blog.id}`}>
+                        {articles.map((article) => (
+                            <div key={article.id} className={styles.card}>
+                                <Link href={`/Articles/${article.id}`}>
                                     <a>
                                         <div className={styles.cardContents}>
-                                            <p className={styles.title}>{blog.title}</p>
-                                            <p className={styles.publishedDate}>{formatDate(blog.publishedAt)}</p>
+                                            <p className={styles.title}>{article.title}</p>
+                                            <p className={styles.publishedDate}>{formatDate(article.publishedAt)}</p>
                                         </div>
                                     </a>
                                 </Link>
@@ -40,7 +40,7 @@ export default Blog;
 
 export const getStaticProps = async () => {
     const data = await client.get({
-        endpoint: process.env.ENDPOINT_BLOG,
+        endpoint: process.env.ENDPOINT_ARTICLES,
         queries: {
             offset: 0,
             limit: 6
@@ -49,7 +49,7 @@ export const getStaticProps = async () => {
 
     return {
         props: {
-            data: data.contents,
+            articles: data.contents,
             totalCount: data.totalCount
         }
     }
