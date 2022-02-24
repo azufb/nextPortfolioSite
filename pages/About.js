@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { formatDate } from '../libs/dateFormat';
 import { profileData } from '../libs/profileData';
 
-export default function About({ data }) {
+const About = ({ data }) => {
     const languages = ["HTML", "CSS", "Sass", "JavaScript", "TypeScript", "PHP"];
     const frameWorks = ["React", "Vue.js", "Svelte", "Next.js"];
 
@@ -19,7 +19,7 @@ export default function About({ data }) {
                 <tbody>
                     {profileData.map((profile, index) => (
                         <tr className={styles.tRow} key={index}>
-                            <td className={styles.date}>{formatDate(profile.date)}</td>
+                            <td className={styles.date}>{formatDate(profile.year, (profile.month - 1), profile.date)}</td>
                             <td>
                                 <p>
                                     {profile.event}
@@ -117,6 +117,8 @@ export default function About({ data }) {
         </Layout>
     )
 }
+
+export default About;
 
 export const getStaticProps = async () => {
     const data = await client.get({ endpoint: "certification" });
