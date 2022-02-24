@@ -2,11 +2,11 @@ import Top from './Top';
 import Layout from '../components/Layout';
 import { client } from '../libs/client';
 
-const Home = ({ blogs }) => {
+const Home = ({ articles }) => {
   return (
     <div>
       <Layout>
-        <Top blogs={blogs} />
+        <Top articles={articles} />
       </Layout>
     </div>
   )
@@ -16,7 +16,7 @@ export default Home;
 
 export const getStaticProps = async () => {
   const data = await client.get({
-      endpoint: "blog",
+      endpoint: process.env.ENDPOINT_ARTICLES,
       queries: {
           offset: 0,
           limit: 3
@@ -25,7 +25,7 @@ export const getStaticProps = async () => {
 
   return {
       props: {
-        blogs: data.contents
+        articles: data.contents
       }
   }
 }
