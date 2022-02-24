@@ -3,6 +3,7 @@ import { Pagination } from "../../../components/BlogPagination";
 import Layout from "../../../components/Layout";
 import styles from "../../../styles/Blog.module.css";
 import { client } from "../../../libs/client";
+import { formatDate } from "../../../libs/dateFormat";
 
 const PER_PAGE = 6;
 
@@ -22,7 +23,7 @@ export default function BlogPageId({ data, totalCount }) {
                                     <a>
                                         <div className={styles.cardContents}>
                                             <p className={styles.title}>{blog.title}</p>
-                                            <p className={styles.publishedDate}>{new Date(blog.publishedAt).toLocaleDateString()}</p>
+                                            <p className={styles.publishedDate}>{formatDate(blog.publishedAt)}</p>
                                         </div>
                                     </a>
                                 </Link>

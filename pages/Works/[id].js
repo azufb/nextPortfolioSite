@@ -3,14 +3,15 @@ import { client } from "../../libs/client";
 import styles from "../../styles/WorksDetail.module.css";
 import Link from "next/link";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '../../node_modules/@fortawesome/free-brands-svg-icons' 
+import { faGithub } from '../../node_modules/@fortawesome/free-brands-svg-icons';
+import { formatDate } from '../dateFormat';
 
 export default function WorksId({ work }) {
     return (
         <Layout>
             <h1 className={styles.h1}>#{work.name}</h1>
             <div className={styles.dateAndTag}>
-                <p>リリース：{new Date(work.date).toLocaleDateString()}</p>
+                <p>リリース：{formatDate(work.date)}</p>
                 <p>ジャンル：#{work.tag}</p>
             </div>
             <div className={styles.imgArea}>
