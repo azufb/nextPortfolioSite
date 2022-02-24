@@ -6,6 +6,7 @@ import styles from '../styles/About.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import { formatDate } from '../libs/dateFormat';
+import { profileData } from '../libs/profileData';
 
 export default function About({ data }) {
     const languages = ["HTML", "CSS", "Sass", "JavaScript", "TypeScript", "PHP"];
@@ -16,30 +17,18 @@ export default function About({ data }) {
             <h1 className={styles.h1}>#ABOUT</h1>
             <table className={styles.profileTable}>
                 <tbody>
-                    <tr className={styles.tRow}>
-                        <td className={styles.date}>1998/02/10</td>
-                        <td>兵庫県で生まれる。</td>
-                    </tr>
-                    <tr className={styles.tRow}>
-                        <td className={styles.date}>2016/04/01</td>
-                        <td>関西学院大学商学部入学。</td>
-                    </tr>
-                    <tr className={styles.tRow}>
-                        <td className={styles.date}>2020/03/31</td>
-                        <td>関西学院大学商学部卒業。</td>
-                    </tr>
-                    <tr className={styles.tRow}>
-                        <td className={styles.date}>2020/10/12</td>
-                        <td>J.B.Goode株式会社入社。(フルタイムアルバイト)</td>
-                    </tr>
-                    <tr className={styles.tRow}>
-                        <td className={styles.date}>2021/09/30</td>
-                        <td>J.B.Goode株式会社退職。(フルタイムアルバイト)</td>
-                    </tr>
-                    <tr className={styles.tRow}>
-                        <td className={styles.date}>2021/10/01</td>
-                        <td>株式会社ルートゼロ入社。<FontAwesomeIcon icon={faLocationDot} className={styles.locationDot} /></td>
-                    </tr>
+                    {profileData.map((profile, index) => (
+                        <tr className={styles.tRow} key={index}>
+                            <td className={styles.date}>{formatDate(profile.date)}</td>
+                            <td>
+                                <p>
+                                    {profile.event}
+                                    {(profile.current) ? <FontAwesomeIcon icon={faLocationDot} className={styles.locationDot} /> : ""}
+                                </p>
+                                {(profile.description) ? <p>{profile.description}</p> : (<></>)}
+                            </td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
 
@@ -134,7 +123,7 @@ export const getStaticProps = async () => {
 
     return {
         props: {
-            data: data.contents || null || []
+            data: data.contents
         }
     }
 }

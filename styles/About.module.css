@@ -56,6 +56,10 @@
     font-size: 1.5em;
 }
 
+.tRow td p {
+    margin: 0;
+}
+
 /* リンク */
 @media screen and (min-width: 280px) {
     .links {
