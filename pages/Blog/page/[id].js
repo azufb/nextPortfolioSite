@@ -17,7 +17,7 @@ const BlogPageId = ({ data, totalCount }) => {
                     <div className={styles.cards}>
                         {data.map((blog) => (
                             <div key={blog.id} className={styles.card}>
-                                <Link href={`/Blog/${blog.id}`}>
+                                <Link href={`/Articles/${blog.id}`}>
                                     <a>
                                         <div className={styles.cardContents}>
                                             <p className={styles.title}>{blog.title}</p>
@@ -43,7 +43,7 @@ export const getStaticPaths = async () => {
 
     const range = (start, end) =>
         [...Array(end - start + 1)].map((_, i) => start + i)
-    const paths = range(1, Math.ceil(data.totalCount/process.env.NEXT_PUBLIC_PER_PAGE)).map((blog) => `/Blog/page/${blog}`)
+    const paths = range(1, Math.ceil(data.totalCount/process.env.NEXT_PUBLIC_PER_PAGE)).map((blog) => `/Articles/page/${blog}`)
 
     return { paths, fallback: false };
 }

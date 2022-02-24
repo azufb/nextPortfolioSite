@@ -1,7 +1,7 @@
 import Layout from '../components/Layout';
 import { client } from '../libs/client';
 import styles from '../styles/Blog.module.css';
-import { Pagination } from '../components/BlogPagination';
+import { ArticlesPagination } from '../components/ArticlesPagination';
 import Link from 'next/link';
 import { formatDate } from '../libs/dateFormat';
 
@@ -18,7 +18,7 @@ const Blog = ({ data, totalCount }) => {
                     <div className={styles.cards}>
                         {data.map((blog) => (
                             <div key={blog.id} className={styles.card}>
-                                <Link href={`/Blog/${blog.id}`}>
+                                <Link href={`/Articles/${blog.id}`}>
                                     <a>
                                         <div className={styles.cardContents}>
                                             <p className={styles.title}>{blog.title}</p>
@@ -31,7 +31,7 @@ const Blog = ({ data, totalCount }) => {
                     </div>
                 )
                 }
-            <Pagination totalCount={totalCount} />
+            <ArticlesPagination totalCount={totalCount} />
         </Layout>
     )
 }
