@@ -23,9 +23,16 @@
 }
 
 .tRow td {
-    padding: 0.5rem 1rem;
     vertical-align: baseline;
     height: 5rem;
+}
+
+.tRow td:nth-child(1) {
+    padding: 0.5rem 1rem 0.5rem 0;
+}
+
+.tRow td:nth-child(2) {
+    padding: 0.5rem 0 0.5rem 1rem;
 }
 
 @media screen and (min-width: 280px) {
@@ -40,7 +47,7 @@
         width: 3rem;
         height: 3rem;
         position: absolute;
-        right: -6.5%;
+        right: -7%;
         color: #E64B7E;
     }
 }
@@ -54,6 +61,10 @@
 .locationDot {
     color: #DF205F;
     font-size: 1.5em;
+}
+
+.tRow td p {
+    margin: 0;
 }
 
 /* リンク */

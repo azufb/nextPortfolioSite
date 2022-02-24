@@ -3,8 +3,10 @@ import { client } from '../libs/client';
 import styles from '../styles/Blog.module.css';
 import { Pagination } from '../components/BlogPagination';
 import Link from 'next/link';
+import { formatDate } from '../libs/dateFormat';
 
-export default function Blog({ data, totalCount }) {
+const Blog = ({ data, totalCount }) => {
+
     return (
         <Layout>
             <h1 className={styles.h1}>#BLOG</h1>
@@ -20,7 +22,7 @@ export default function Blog({ data, totalCount }) {
                                     <a>
                                         <div className={styles.cardContents}>
                                             <p className={styles.title}>{blog.title}</p>
-                                            <p className={styles.publishedDate}>{new Date(blog.publishedAt).toLocaleDateString()}</p>
+                                            <p className={styles.publishedDate}>{formatDate(blog.publishedAt)}</p>
                                         </div>
                                     </a>
                                 </Link>
@@ -33,6 +35,8 @@ export default function Blog({ data, totalCount }) {
         </Layout>
     )
 }
+
+export default Blog;
 
 export const getStaticProps = async () => {
     const data = await client.get({

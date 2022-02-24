@@ -3,14 +3,15 @@ import { client } from "../../libs/client";
 import styles from "../../styles/BlogDetail.module.css";
 import Link from "next/link";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '../../node_modules/@fortawesome/free-brands-svg-icons' 
+import { faGithub } from '../../node_modules/@fortawesome/free-brands-svg-icons';
+import { formatDate } from "../../libs/dateFormat";
 
-export default function BlogId({ blog }) {
+const BlogId = ({ blog }) => {
     return (
         <Layout>
             <h1 className={styles.h1}>#{blog.title}</h1>
             <div className={styles.dateAndTag}>
-                <p>リリース：{new Date(blog.publishedAt).toLocaleDateString()}</p>
+                <p>リリース：{formatDate(blog.publishedAt)}</p>
             </div>
             <div className={styles.contents}>{blog.contents}</div>
             <div>
@@ -44,6 +45,8 @@ export default function BlogId({ blog }) {
         </Layout>
     )
 }
+
+export default BlogId;
 
 export const getStaticPaths = async () => {
     const data = await client.get({ endpoint: 'blog' });

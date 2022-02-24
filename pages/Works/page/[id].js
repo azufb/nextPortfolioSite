@@ -3,10 +3,11 @@ import { Pagination } from "../../../components/Pagination";
 import Layout from "../../../components/Layout";
 import styles from "../../../styles/Works.module.css";
 import { client } from "../../../libs/client";
+import { formatDate } from '../../../libs/dateFormat';
 
 const PER_PAGE = 6;
 
-export default function WorksPageId({ data, totalCount }) {
+const WorksPageId = ({ data, totalCount }) => {
     return (
         <Layout>
             <h1 className={styles.h1}>#WORKS</h1>
@@ -18,7 +19,7 @@ export default function WorksPageId({ data, totalCount }) {
                                 <img src={work.image.url.concat('?fit=fill')} alt="イメージ画像" />
                                 <div className={styles.cardContents}>
                                     <p className={styles.appName}>{work.name}</p>
-                                    <p className={styles.finishedDate}>{new Date(work.date).toLocaleDateString()}</p>
+                                    <p className={styles.finishedDate}>{formatDate(work.date)}</p>
                                     <p className={styles.tag}>#{work.tag}</p>
                                 </div>
                             </a>
@@ -30,6 +31,8 @@ export default function WorksPageId({ data, totalCount }) {
         </Layout>
     )
 }
+
+export default WorksPageId;
 
 // 動的なページを作成
 export const getStaticPaths = async () => {

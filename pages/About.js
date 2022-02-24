@@ -5,8 +5,10 @@ import { faLocationDot, faMedal } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/About.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
+import { formatDate } from '../libs/dateFormat';
+import { profileData } from '../libs/profileData';
 
-export default function About({ data }) {
+const About = ({ data }) => {
     const languages = ["HTML", "CSS", "Sass", "JavaScript", "TypeScript", "PHP"];
     const frameWorks = ["React", "Vue.js", "Svelte", "Next.js"];
 
@@ -15,30 +17,18 @@ export default function About({ data }) {
             <h1 className={styles.h1}>#ABOUT</h1>
             <table className={styles.profileTable}>
                 <tbody>
-                    <tr className={styles.tRow}>
-                        <td className={styles.date}>1998/2/10</td>
-                        <td>兵庫県で生まれる。</td>
-                    </tr>
-                    <tr className={styles.tRow}>
-                        <td className={styles.date}>2016/4/1</td>
-                        <td>関西学院大学商学部入学。</td>
-                    </tr>
-                    <tr className={styles.tRow}>
-                        <td className={styles.date}>2020/3/31</td>
-                        <td>関西学院大学商学部卒業。</td>
-                    </tr>
-                    <tr className={styles.tRow}>
-                        <td className={styles.date}>2020/10/12</td>
-                        <td>J.B.Goode株式会社入社。(フルタイムアルバイト)</td>
-                    </tr>
-                    <tr className={styles.tRow}>
-                        <td className={styles.date}>2021/9/30</td>
-                        <td>J.B.Goode株式会社退職。(フルタイムアルバイト)</td>
-                    </tr>
-                    <tr className={styles.tRow}>
-                        <td className={styles.date}>2021/10/1</td>
-                        <td>株式会社ルートゼロ入社。<FontAwesomeIcon icon={faLocationDot} className={styles.locationDot} /></td>
-                    </tr>
+                    {profileData.map((profile, index) => (
+                        <tr className={styles.tRow} key={index}>
+                            <td className={styles.date}>{formatDate(profile.year, (profile.month - 1), profile.date)}</td>
+                            <td>
+                                <p>
+                                    {profile.event}
+                                    {(profile.current) ? <FontAwesomeIcon icon={faLocationDot} className={styles.locationDot} /> : ""}
+                                </p>
+                                {(profile.description) ? <p>{profile.description}</p> : (<></>)}
+                            </td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
 
@@ -117,7 +107,7 @@ export default function About({ data }) {
                 <tbody>
                     { data.map((certification) => (
                         <tr key={certification.id} className={styles.tableRow}>
-                            <td>{new Date(certification.date).toLocaleDateString()}</td>
+                            <td>{formatDate(certification.date)}</td>
                             <td><span className={styles.span}>{certification.title}</span></td>
                             <td>#{certification.tag}</td>
                         </tr>
@@ -128,12 +118,14 @@ export default function About({ data }) {
     )
 }
 
+export default About;
+
 export const getStaticProps = async () => {
     const data = await client.get({ endpoint: "certification" });
 
     return {
         props: {
-            data: data.contents || null || []
+            data: data.contents
         }
     }
 }

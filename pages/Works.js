@@ -3,8 +3,9 @@ import { client } from '../libs/client';
 import styles from '../styles/Works.module.css';
 import { Pagination } from '../components/Pagination';
 import Link from 'next/link';
+import { formatDate } from '../libs/dateFormat.js';
 
-export default function Works({ data, totalCount }) {
+const Works = ({ data, totalCount }) => {
     return (
         <Layout>
             <h1 className={styles.h1}>#WORKS</h1>
@@ -19,7 +20,7 @@ export default function Works({ data, totalCount }) {
                                 <img src={work.image.url.concat('?fit=fill')} alt="イメージ画像" />
                                 <div className={styles.cardContents}>
                                     <p className={styles.appName}>{work.name}</p>
-                                    <p className={styles.finishedDate}>{new Date(work.date).toLocaleDateString()}</p>
+                                    <p className={styles.finishedDate}>{formatDate(work.date)}</p>
                                     <p className={styles.tag}>#{work.tag}</p>
                                 </div>
                             </a>
@@ -31,6 +32,8 @@ export default function Works({ data, totalCount }) {
         </Layout>
     )
 }
+
+export default Works;
 
 export const getStaticProps = async () => {
     const data = await client.get({
