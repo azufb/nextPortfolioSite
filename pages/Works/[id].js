@@ -39,7 +39,7 @@ const WorksId = ({ work }) => {
 export default WorksId;
 
 export const getStaticPaths = async () => {
-    const data = await client.get({ endpoint: 'works' });
+    const data = await client.get({ endpoint: process.env.ENDPOINT_WORKS });
 
     const paths = data.contents.map((work) => `/Works/${work.id}` );
     
@@ -48,7 +48,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
     const id = context.params.id;
-    const data = await client.get({ endpoint: 'works', contentId: id });
+    const data = await client.get({ endpoint: process.env.ENDPOINT_WORKS, contentId: id });
 
     return {
         props: {

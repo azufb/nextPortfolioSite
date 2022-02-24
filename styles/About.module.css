@@ -38,7 +38,7 @@
 @media screen and (min-width: 280px) {
     .date {
         text-align: right;
-        border-right: 1px solid #EA618E;
+        border-right: 0.2rem solid #E64B7E;
         position: relative;
     }
 
@@ -47,7 +47,7 @@
         width: 3rem;
         height: 3rem;
         position: absolute;
-        right: -7%;
+        right: -8%;
         color: #E64B7E;
     }
 }

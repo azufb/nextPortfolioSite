@@ -49,7 +49,7 @@ const BlogId = ({ blog }) => {
 export default BlogId;
 
 export const getStaticPaths = async () => {
-    const data = await client.get({ endpoint: 'blog' });
+    const data = await client.get({ endpoint: process.env.ENDPOINT_BLOG });
 
     const paths = data.contents.map((blog) => `/Blog/${blog.id}` );
     
@@ -58,7 +58,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
     const id = context.params.id;
-    const data = await client.get({ endpoint: 'blog', contentId: id });
+    const data = await client.get({ endpoint: process.env.ENDPOINT_BLOG, contentId: id });
 
     return {
         props: {
