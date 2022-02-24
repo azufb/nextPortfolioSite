@@ -7,7 +7,7 @@ import { formatDate } from "../../../libs/dateFormat";
 
 const PER_PAGE = 6;
 
-export default function BlogPageId({ data, totalCount }) {
+const BlogPageId = ({ data, totalCount }) => {
     return (
         <Layout>
             <h1 className={styles.h1}>#BLOG</h1>
@@ -36,6 +36,8 @@ export default function BlogPageId({ data, totalCount }) {
         </Layout>
     )
 }
+
+export default BlogPageId;
 
 // 動的なページを作成
 export const getStaticPaths = async () => {

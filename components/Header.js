@@ -2,7 +2,7 @@ import Link from 'next/link';
 import styles from '../styles/Header.module.css';
 import { useRouter } from "next/router";
 
-export default function Header() {
+const Header = () => {
     const router = useRouter();
 
     return (
@@ -55,3 +55,5 @@ export default function Header() {
         </div>
     )
 }
+
+export default Header;

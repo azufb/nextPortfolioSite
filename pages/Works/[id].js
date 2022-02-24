@@ -4,9 +4,9 @@ import styles from "../../styles/WorksDetail.module.css";
 import Link from "next/link";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '../../node_modules/@fortawesome/free-brands-svg-icons';
-import { formatDate } from '../dateFormat';
+import { formatDate } from "../../libs/dateFormat";
 
-export default function WorksId({ work }) {
+const WorksId = ({ work }) => {
     return (
         <Layout>
             <h1 className={styles.h1}>#{work.name}</h1>
@@ -35,6 +35,8 @@ export default function WorksId({ work }) {
         </Layout>
     )
 }
+
+export default WorksId;
 
 export const getStaticPaths = async () => {
     const data = await client.get({ endpoint: 'works' });

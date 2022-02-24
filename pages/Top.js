@@ -2,7 +2,7 @@ import styles from "../styles/Top.module.css";
 import Link from "next/link";
 import { client } from '../libs/client';
 
-export default function Top({ blogs }) {
+const Top = ({ blogs }) => {
     return (
         <div className={styles.contents}>
             <h1 className={styles.h1}>#NEWS</h1>
@@ -44,6 +44,8 @@ export default function Top({ blogs }) {
         </div>
     )
 }
+
+export default Top;
 
 export const getStaticProps = async () => {
     const data = await client.get({

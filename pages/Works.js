@@ -5,7 +5,7 @@ import { Pagination } from '../components/Pagination';
 import Link from 'next/link';
 import { formatDate } from '../libs/dateFormat.js';
 
-export default function Works({ data, totalCount }) {
+const Works = ({ data, totalCount }) => {
     return (
         <Layout>
             <h1 className={styles.h1}>#WORKS</h1>
@@ -32,6 +32,8 @@ export default function Works({ data, totalCount }) {
         </Layout>
     )
 }
+
+export default Works;
 
 export const getStaticProps = async () => {
     const data = await client.get({

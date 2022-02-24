@@ -2,7 +2,7 @@ import Top from './Top';
 import Layout from '../components/Layout';
 import { client } from '../libs/client';
 
-export default function Home({ blogs }) {
+const Home = ({ blogs }) => {
   return (
     <div>
       <Layout>
@@ -11,6 +11,8 @@ export default function Home({ blogs }) {
     </div>
   )
 }
+
+export default Home;
 
 export const getStaticProps = async () => {
   const data = await client.get({

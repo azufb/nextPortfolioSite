@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '../../node_modules/@fortawesome/free-brands-svg-icons';
 import { formatDate } from "../../libs/dateFormat";
 
-export default function BlogId({ blog }) {
+const BlogId = ({ blog }) => {
     return (
         <Layout>
             <h1 className={styles.h1}>#{blog.title}</h1>
@@ -45,6 +45,8 @@ export default function BlogId({ blog }) {
         </Layout>
     )
 }
+
+export default BlogId;
 
 export const getStaticPaths = async () => {
     const data = await client.get({ endpoint: 'blog' });
