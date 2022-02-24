@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Pagination } from "../../../components/BlogPagination";
+import { Pagination } from "../../../components/ArticlesPagination";
 import Layout from "../../../components/Layout";
 import styles from "../../../styles/Blog.module.css";
 import { client } from "../../../libs/client";

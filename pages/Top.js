@@ -1,6 +1,7 @@
 import styles from "../styles/Top.module.css";
 import Link from "next/link";
 import { client } from '../libs/client';
+import { formatDate } from '../libs/dateFormat';
 
 const Top = ({ articles }) => {
     return (
@@ -18,7 +19,7 @@ const Top = ({ articles }) => {
                                     <a>
                                         <div className={styles.newsContents}>
                                             <p className={styles.title}>{article.title}</p>
-                                            <p className={styles.publishedDate}>{new Date(article.publishedAt).toLocaleDateString()}</p>
+                                            <p className={styles.publishedDate}>{formatDate(article.publishedAt)}</p>
                                         </div>
                                     </a>
                                 </Link>
