@@ -3,7 +3,6 @@ import styles from "../styles/Pagination.module.css";
 import { useRouter } from "next/router";
 
 export const Pagination = ({ totalCount }) => {
-    const PER_PAGE = 5;
     const router = useRouter();
 
     const range = (start, end) => 
@@ -11,7 +10,7 @@ export const Pagination = ({ totalCount }) => {
 
     return (
         <div className={styles.contents}>
-            {range(1, Math.ceil(totalCount/PER_PAGE)).map((number, index) => (
+            {range(1, Math.ceil(totalCount/process.env.NEXT_PUBLIC_PER_PAGE)).map((number, index) => (
                 <Link key={index} href={`/Works/page/${number}`} passHref>
                     <span className={
                         router.asPath === `/Works/page/${number}` ?

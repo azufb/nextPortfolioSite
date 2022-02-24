@@ -5,8 +5,6 @@ import styles from "../../../styles/Blog.module.css";
 import { client } from "../../../libs/client";
 import { formatDate } from "../../../libs/dateFormat";
 
-const PER_PAGE = 6;
-
 const BlogPageId = ({ data, totalCount }) => {
     return (
         <Layout>
@@ -41,11 +39,11 @@ export default BlogPageId;
 
 // 動的なページを作成
 export const getStaticPaths = async () => {
-    const data = await client.get({ endpoint: "blog" });
+    const data = await client.get({ endpoint: process.env.ENDPOINT_BLOG });
 
     const range = (start, end) =>
         [...Array(end - start + 1)].map((_, i) => start + i)
-    const paths = range(1, Math.ceil(data.totalCount/PER_PAGE)).map((blog) => `/Blog/page/${blog}`)
+    const paths = range(1, Math.ceil(data.totalCount/process.env.NEXT_PUBLIC_PER_PAGE)).map((blog) => `/Blog/page/${blog}`)
 
     return { paths, fallback: false };
 }
@@ -53,7 +51,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
     const id = context.params.id;
     const data = await client.get({
-        endpoint: "blog",
+        endpoint: process.env.ENDPOINT_BLOG,
         queries: {
             offset: (id-1)*6,
             limit: 6

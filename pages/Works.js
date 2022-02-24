@@ -37,7 +37,7 @@ export default Works;
 
 export const getStaticProps = async () => {
     const data = await client.get({
-        endpoint: "works",
+        endpoint: process.env.ENDPOINT_WORKS,
         queries: {
             offset: 0,
             limit: 6

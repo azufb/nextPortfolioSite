@@ -121,7 +121,7 @@ const About = ({ data }) => {
 export default About;
 
 export const getStaticProps = async () => {
-    const data = await client.get({ endpoint: "certification" });
+    const data = await client.get({ endpoint: process.env.ENDPOINT_CERTIFICATION });
 
     return {
         props: {

@@ -49,7 +49,7 @@ export default Top;
 
 export const getStaticProps = async () => {
     const data = await client.get({
-        endpoint: "blog",
+        endpoint: process.env.ENDPOINT_BLOG,
         queries: {
             offset: 0,
             limit: 3

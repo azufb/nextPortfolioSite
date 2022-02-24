@@ -5,8 +5,6 @@ import styles from "../../../styles/Works.module.css";
 import { client } from "../../../libs/client";
 import { formatDate } from '../../../libs/dateFormat';
 
-const PER_PAGE = 6;
-
 const WorksPageId = ({ data, totalCount }) => {
     return (
         <Layout>
@@ -36,11 +34,12 @@ export default WorksPageId;
 
 // 動的なページを作成
 export const getStaticPaths = async () => {
-    const data = await client.get({ endpoint: "works" });
+    const data = await client.get({ endpoint: process.env.ENDPOINT_WORKS });
 
-    const range = (start, end) =>
+    const range = (start, end) => 
         [...Array(end - start + 1)].map((_, i) => start + i)
-    const paths = range(1, Math.ceil(data.totalCount/PER_PAGE)).map((work) => `/Works/page/${work}`)
+
+    const paths = range(1, Math.ceil(data.totalCount/process.env.NEXT_PUBLIC_PER_PAGE)).map((work) => `/Works/page/${work}`)
 
     return { paths, fallback: false };
 }
@@ -48,7 +47,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
     const id = context.params.id;
     const data = await client.get({
-        endpoint: "works",
+        endpoint: process.env.ENDPOINT_WORKS,
         queries: {
             offset: (id-1)*6,
             limit: 6
