@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from "../styles/Pagination.module.css";
 import { useRouter } from "next/router";
 
-export const ArticlesPagination = ({ totalCount }) => {
+export const Pagination = ({ totalCount }) => {
     const router = useRouter();
 
     const range = (start, end) => 
@@ -24,3 +24,5 @@ export const ArticlesPagination = ({ totalCount }) => {
         </div>
     )
 };
+
+export default Pagination;
