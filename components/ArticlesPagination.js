@@ -24,5 +24,3 @@ export const Pagination = ({ totalCount }) => {
         </div>
     )
 };
-
-export default Pagination;
