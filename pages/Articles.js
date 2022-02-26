@@ -1,7 +1,7 @@
 import Layout from '../components/Layout';
 import { client } from '../libs/client';
 import styles from '../styles/Blog.module.css';
-import { ArticlesPagination } from '../components/ArticlesPagination';
+import { Pagination } from '../components/ArticlesPagination';
 import Link from 'next/link';
 import { formatDate } from '../libs/dateFormat';
 
@@ -31,7 +31,7 @@ const Blog = ({ articles, totalCount }) => {
                     </div>
                 )
                 }
-            <ArticlesPagination totalCount={totalCount} />
+            <Pagination totalCount={totalCount} />
         </Layout>
     )
 }
