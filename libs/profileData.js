@@ -39,7 +39,7 @@ export const profileData = [
         month: 10,
         date: 12,
         event: "J.B.Goode株式会社入社。(フルタイムアルバイト)",
-        description: "",
+        description: "CMSを用いた野球関連のサイトや業務用システムの運用保守、SQLを使ったFAQ対応などを担当しました。\r\n言語はJavaScript・TypeScriptを使用し、ライブラリはReactやstyled-componentを経験しました。",
         current: false
     },
     {
@@ -55,7 +55,7 @@ export const profileData = [
         month: 10,
         date: 1,
         event: "株式会社ルートゼロ入社。",
-        description: "",
+        description: "フロントを中心に対応しています。\r\n言語はJavaScript・TypeScript・Sassを使用し、フレームワークやライブラリはVue.js・jQueryを使ったりしています。",
         current: true
     },
 ]
