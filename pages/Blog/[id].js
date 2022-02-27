@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '../../node_modules/@fortawesome/free-brands-svg-icons';
 import { formatDate } from "../../libs/dateFormat";
 
-const BlogId = ({ article }) => {
+const articleId = ({ article }) => {
     return (
         <Layout>
             <h1 className={styles.h1}>#{article.title}</h1>
@@ -15,21 +15,21 @@ const BlogId = ({ article }) => {
             </div>
             <div className={styles.contents}>{article.contents}</div>
             <div>
-                {(blog.GitHubURL) ? 
+                {(article.GitHubURL) ? 
                     <Link href={article.GitHubURL}>
                         <a target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faGithub} className={styles.linkIconGitHub} />
                         </a>
                     </Link> :
                     
-                        (blog.ZennURL) ? 
+                        (article.ZennURL) ? 
                             <div className={styles.zennLink}>
                                 <Link href={article.ZennURL}>
                                     <a target="_blank" rel="noopener noreferrer">Zennで記事を読んでみる</a>
                                 </Link>
                             </div> :
                             
-                                (blog.QiitaURL) ?
+                                (article.QiitaURL) ?
                                 <div className={styles.qiitaLink}>
                                     <Link href={article.QiitaURL}>
                                         <a target="_blank" rel="noopener noreferrer">
@@ -46,7 +46,7 @@ const BlogId = ({ article }) => {
     )
 }
 
-export default BlogId;
+export default articleId;
 
 export const getStaticPaths = async () => {
     const articles = await client.get({ endpoint: process.env.ENDPOINT_ARTICLES });
