@@ -42,9 +42,9 @@ const Header = () => {
                     </span>
                 </Link>
                 <span className={styles.separator}>/</span>
-                <Link href="/Articles" passHref>
+                <Link href="/Articles/page/1" passHref>
                     <span className={
-                        router.asPath.includes("/Articles") ?
+                        router.asPath.includes("/Articles/") ?
                         styles.spanCurrent :
                         ""
                     }>

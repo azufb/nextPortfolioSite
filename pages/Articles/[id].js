@@ -3,7 +3,7 @@ import { client } from "../../libs/client";
 import styles from "../../styles/BlogDetail.module.css";
 import Link from "next/link";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '../../node_modules/@fortawesome/free-brands-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { formatDate } from "../../libs/dateFormat";
 
 const articleId = ({ article }) => {

@@ -5,7 +5,7 @@ import styles from "../../../styles/Blog.module.css";
 import { client } from "../../../libs/client";
 import { formatDate } from "../../../libs/dateFormat";
 
-const BlogPageId = ({ articles, totalCount }) => {
+const ArticlesPageId = ({ articles, totalCount }) => {
     return (
         <Layout>
             <h1 className={styles.h1}>#ARTICLES</h1>
@@ -35,7 +35,7 @@ const BlogPageId = ({ articles, totalCount }) => {
     )
 }
 
-export default BlogPageId;
+export default ArticlesPageId;
 
 // 動的なページを作成
 export const getStaticPaths = async () => {
