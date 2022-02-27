@@ -5,7 +5,7 @@ import { Pagination } from '../components/ArticlesPagination';
 import Link from 'next/link';
 import { formatDate } from '../libs/dateFormat';
 
-const Blog = ({ articles, totalCount }) => {
+const Articles = ({ articles, totalCount }) => {
 
     return (
         <Layout>
@@ -36,7 +36,7 @@ const Blog = ({ articles, totalCount }) => {
     )
 }
 
-export default Blog;
+export default Articles;
 
 export const getStaticProps = async () => {
     const data = await client.get({
