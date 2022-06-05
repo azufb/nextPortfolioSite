@@ -37,17 +37,17 @@ const About = ({ data }) => {
                 <a target="_blank" href="https://twitter.com/azunyan_eng" rel="noopener noreferrer" className={styles.linkIcon}>
                     <Image src="/images/twitterLogo.svg" alt='Twitter' width={50} height={50} />
                 </a>
-                <a target="_blank" href={process.env.NEXT_PUBLIC_GITHUB_URL} rel="noopener noreferrer" className={styles.linkIcon}>
+                <a target="_blank" href="https://github.com/azufb" rel="noopener noreferrer" className={styles.linkIcon}>
                     <Image src="/images/gitHubLogo.png" alt='GitHub' width={50} height={50} />
                 </a>
-                <a target="_blank" href={process.env.NEXT_PUBLIC_QIITA_URL} rel="noopener noreferrer" className={styles.linkIcon}>
+                <a target="_blank" href="https://qiita.com/azu_nyan" rel="noopener noreferrer" className={styles.linkIcon}>
                     <Image src="/images/qiitaLogo.png" alt='Qiita' width={50} height={50} />
                 </a>
-                <a target="_blank" href={process.env.NEXT_PUBLIC_ZENN_URL} rel="noopener noreferrer" className={styles.linkIcon}>
+                <a target="_blank" href="https://zenn.dev/azunasu" rel="noopener noreferrer" className={styles.linkIcon}>
                     <Image src="/images/zennLogo.svg" alt='Zenn' width={50} height={50} />
                 </a>
                 <div className={styles.boxLinkWantedly}>
-                    <a target="_blank" href={process.env.NEXT_PUBLIC_WANTEDLY_URL} rel="noopener noreferrer">
+                    <a target="_blank" href="https://www.wantedly.com/id/azusa_okamoto" rel="noopener noreferrer">
                         <Image src="/images/wantedlyVisit.svg" alt='Wantedly' layout='fill' objectFit='contain' />
                     </a>
                 </div>
