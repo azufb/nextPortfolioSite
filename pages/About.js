@@ -34,7 +34,7 @@ const About = ({ data }) => {
 
             <h1 className={styles.h1}>#LINKS</h1>
             <div className={styles.links}>
-                <a target="_blank" href={process.env.NEXT_PUBLIC_TWITTER_URL} rel="noopener noreferrer" className={styles.linkIcon}>
+                <a target="_blank" href="https://twitter.com/azunyan_eng" rel="noopener noreferrer" className={styles.linkIcon}>
                     <Image src="/images/twitterLogo.svg" alt='Twitter' width={50} height={50} />
                 </a>
                 <a target="_blank" href={process.env.NEXT_PUBLIC_GITHUB_URL} rel="noopener noreferrer" className={styles.linkIcon}>
