@@ -34,32 +34,22 @@ const About = ({ data }) => {
 
             <h1 className={styles.h1}>#LINKS</h1>
             <div className={styles.links}>
-                <Link href={process.env.NEXT_PUBLIC_TWITTER_URL}>
-                    <a target="_blank" rel="noopener noreferrer" className={styles.linkIcon}>
-                        <Image src="/images/twitterLogo.svg" alt='Twitter' width={50} height={50} />
-                    </a>
-                </Link>
-                <Link href={process.env.NEXT_PUBLIC_GITHUB_URL}>
-                    <a target="_blank" rel="noopener noreferrer" className={styles.linkIcon}>
-                        <Image src="/images/gitHubLogo.png" alt='GitHub' width={50} height={50} />
-                    </a>
-                </Link>
-                <Link href={process.env.NEXT_PUBLIC_QIITA_URL}>
-                    <a target="_blank" rel="noopener noreferrer" className={styles.linkIcon}>
-                        <Image src="/images/qiitaLogo.png" alt='Qiita' width={50} height={50} />
-                    </a>
-                </Link>
-                <Link href={process.env.NEXT_PUBLIC_ZENN_URL} className={styles.linkIcon}>
-                    <a target="_blank" rel="noopener noreferrer" className={styles.linkIcon}>
-                        <Image src="/images/zennLogo.svg" alt='Zenn' width={50} height={50} />
-                    </a>
-                </Link>
+                <a target="_blank" href={process.env.NEXT_PUBLIC_TWITTER_URL} rel="noopener noreferrer" className={styles.linkIcon}>
+                    <Image src="/images/twitterLogo.svg" alt='Twitter' width={50} height={50} />
+                </a>
+                <a target="_blank" href={process.env.NEXT_PUBLIC_GITHUB_URL} rel="noopener noreferrer" className={styles.linkIcon}>
+                    <Image src="/images/gitHubLogo.png" alt='GitHub' width={50} height={50} />
+                </a>
+                <a target="_blank" href={process.env.NEXT_PUBLIC_QIITA_URL} rel="noopener noreferrer" className={styles.linkIcon}>
+                    <Image src="/images/qiitaLogo.png" alt='Qiita' width={50} height={50} />
+                </a>
+                <a target="_blank" href={process.env.NEXT_PUBLIC_ZENN_URL} rel="noopener noreferrer" className={styles.linkIcon}>
+                    <Image src="/images/zennLogo.svg" alt='Zenn' width={50} height={50} />
+                </a>
                 <div className={styles.boxLinkWantedly}>
-                    <Link href={process.env.NEXT_PUBLIC_WANTEDLY_URL}>
-                        <a target="_blank" rel="noopener noreferrer">
-                            <Image src="/images/wantedlyVisit.svg" alt='Wantedly' layout='fill' objectFit='contain' />
-                        </a>
-                    </Link>
+                    <a target="_blank" href={process.env.NEXT_PUBLIC_WANTEDLY_URL} rel="noopener noreferrer">
+                        <Image src="/images/wantedlyVisit.svg" alt='Wantedly' layout='fill' objectFit='contain' />
+                    </a>
                 </div>
             </div>
             <p className={styles.linkContent}>
